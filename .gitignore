@@ -1,0 +1,42 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+backend/vendor/
+backend/node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/dist-ssr/
+backend/public/build/
+backend/public/hot/
+backend/public/storage/
+
+# Laravel generated files
+backend/storage/*.key
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/storage/logs/*
+backend/storage/pail/
+backend/bootstrap/cache/*.php
+backend/.phpunit.result.cache
+backend/.phpunit.cache/
+
+# Logs and local files
+*.log
+*.local
+Thumbs.db
+.DS_Store
+
+# Editors
+.idea/
+.vscode/
+.fleet/
+.zed/
+
+# Auth/private package files
+backend/auth.json
