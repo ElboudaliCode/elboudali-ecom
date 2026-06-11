@@ -137,7 +137,7 @@ class AdminController extends Controller
      */
     public function usersList()
     {
-        $users = User::orderBy('name', 'asc')->get();
+        $users = User::orderByDesc('created_at')->get();
         return response()->json($users);
     }
 

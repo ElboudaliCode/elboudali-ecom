@@ -48,7 +48,12 @@ const AdminUsersPage = () => {
                 <span style={{ fontSize: '0.83rem', color: '#888' }}>
                     <Link to="/dashboard" style={{ color: '#FFA500' }}>Tableau de bord</Link> › Gestion Utilisateurs
                 </span>
-                <h2 style={{ marginTop: '6px', fontSize: '1.3rem', fontWeight: 700 }}>👥 Gestion des Utilisateurs & Rôles</h2>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginTop: '6px' }}>
+                    <h2 style={{ fontSize: '1.3rem', fontWeight: 700, margin: 0 }}>Gestion des Utilisateurs & Rôles</h2>
+                    <button onClick={fetchUsers} className="btn-detail" disabled={loading}>
+                        {loading ? 'Chargement...' : `Actualiser (${users.length})`}
+                    </button>
+                </div>
             </div>
 
             {error && <div className="alert alert-danger">{error}</div>}
