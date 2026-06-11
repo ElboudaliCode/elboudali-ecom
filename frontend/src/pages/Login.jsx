@@ -15,10 +15,11 @@ const Login = () => {
         event.preventDefault();
         setError(null);
         try {
-            await login({ email, password });
+            await login({ email: email.trim().toLowerCase(), password });
             navigate('/');
         } catch (err) {
-            setError('Identifiants incorrects. Veuillez reessayer.');
+            const errors = err.response?.data?.errors;
+            setError(errors ? Object.values(errors).flat().join(' ') : 'Email ou mot de passe incorrect. Verifiez que vous utilisez la meme adresse email que lors de l inscription.');
         }
     };
 
@@ -42,6 +43,9 @@ const Login = () => {
                                     placeholder="user00@gmail.com"
                                     value={email}
                                     onChange={(event) => setEmail(event.target.value)}
+                                    inputMode="email"
+                                    autoCapitalize="none"
+                                    autoCorrect="off"
                                     required
                                 />
                             </div>

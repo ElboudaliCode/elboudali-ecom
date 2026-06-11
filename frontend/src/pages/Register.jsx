@@ -27,10 +27,11 @@ const Register = () => {
         }
 
         try {
-            await register({ name, email, password, password_confirmation: passwordConfirmation });
+            await register({ name: name.trim(), email: email.trim().toLowerCase(), password, password_confirmation: passwordConfirmation });
             navigate('/');
         } catch (err) {
-            setError(err.response?.data?.message || "Erreur lors de l'inscription.");
+            const errors = err.response?.data?.errors;
+            setError(errors ? Object.values(errors).flat().join(' ') : (err.response?.data?.message || "Erreur lors de l'inscription."));
         }
     };
 
@@ -53,7 +54,7 @@ const Register = () => {
                             </div>
                             <div className="form-group">
                                 <label>Adresse email</label>
-                                <input type="email" placeholder="email@exemple.com" value={email} onChange={(event) => setEmail(event.target.value)} required />
+                                <input type="email" inputMode="email" autoCapitalize="none" autoCorrect="off" placeholder="email@exemple.com" value={email} onChange={(event) => setEmail(event.target.value)} required />
                             </div>
                             <div className="form-group">
                                 <label>Mot de passe</label>

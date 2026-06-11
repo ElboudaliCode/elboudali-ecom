@@ -19,6 +19,11 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
+        $request->merge([
+            'name' => trim((string) $request->input('name')),
+            'email' => strtolower(trim((string) $request->input('email'))),
+        ]);
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -47,6 +52,10 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
+        $request->merge([
+            'email' => strtolower(trim((string) $request->input('email'))),
+        ]);
+
         $validated = $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
