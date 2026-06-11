@@ -78,8 +78,8 @@ class ProductController extends Controller
                 break;
         }
 
-        // Pagination simple (12 produits par page)
-        $products = $query->paginate(12);
+        $perPage = min((int) $request->input('per_page', 24), 48);
+        $products = $query->paginate(max($perPage, 12));
 
         $products->getCollection()->transform(function ($product) {
             $badges = [];

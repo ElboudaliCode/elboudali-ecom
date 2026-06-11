@@ -33,6 +33,9 @@ const HomePage = () => {
     const [sortOption, setSortOption] = useState('newest');
     const [searchTerm, setSearchTerm] = useState('');
     const [filters, setFilters] = useState(initialFilters);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [lastPage, setLastPage] = useState(1);
+    const [loadingMore, setLoadingMore] = useState(false);
     const [searchHistory, setSearchHistory] = useState(() => JSON.parse(localStorage.getItem('search_history') || '[]'));
 
     const { addToCart } = useContext(CartContext);
@@ -41,14 +44,16 @@ const HomePage = () => {
 
     const isClient = user && user.role === 'client';
 
-    const fetchProducts = async (overrides = {}) => {
-        setLoading(true);
+    const fetchProducts = async (overrides = {}, append = false) => {
+        if (append) setLoadingMore(true);
+        else setLoading(true);
         try {
             const next = {
                 search: searchTerm,
                 categoryId: selectedCategory,
                 sort: sortOption,
                 filters,
+                page: 1,
                 ...overrides,
             };
 
@@ -56,6 +61,8 @@ const HomePage = () => {
             if (next.search) params.append('search', next.search);
             if (next.categoryId) params.append('category_id', next.categoryId);
             params.append('sort', next.sort);
+            params.append('page', next.page);
+            params.append('per_page', 24);
 
             Object.entries(next.filters).forEach(([key, value]) => {
                 if (value === true) params.append(key, '1');
@@ -63,12 +70,16 @@ const HomePage = () => {
             });
 
             const response = await api.get(`/products?${params.toString()}`);
-            setProducts(response.data.data || []);
+            const nextProducts = response.data.data || [];
+            setProducts((prev) => append ? [...prev, ...nextProducts] : nextProducts);
             setTotalProducts(response.data.total || 0);
+            setCurrentPage(response.data.current_page || next.page);
+            setLastPage(response.data.last_page || 1);
         } catch (err) {
             console.error(err);
         } finally {
-            setLoading(false);
+            if (append) setLoadingMore(false);
+            else setLoading(false);
         }
     };
 
@@ -99,7 +110,7 @@ const HomePage = () => {
 
     const handleCategorySelect = (catId) => {
         setSelectedCategory(catId);
-        fetchProducts({ categoryId: catId });
+        fetchProducts({ categoryId: catId, page: 1 });
     };
 
     const handleSearch = (term) => {
@@ -109,25 +120,30 @@ const HomePage = () => {
             setSearchHistory(nextHistory);
             localStorage.setItem('search_history', JSON.stringify(nextHistory));
         }
-        fetchProducts({ search: term });
+        fetchProducts({ search: term, page: 1 });
     };
 
     const applyFilters = (event) => {
         event.preventDefault();
-        fetchProducts();
+        fetchProducts({ page: 1 });
     };
 
     const resetFilters = () => {
         setFilters(initialFilters);
         setSearchTerm('');
         setSelectedCategory(null);
-        fetchProducts({ search: '', categoryId: null, filters: initialFilters });
+        fetchProducts({ search: '', categoryId: null, filters: initialFilters, page: 1 });
     };
 
     const showPromotions = () => {
         const promoFilters = { ...initialFilters, promo_only: true };
         setFilters(promoFilters);
-        fetchProducts({ filters: promoFilters });
+        fetchProducts({ filters: promoFilters, page: 1 });
+    };
+
+    const loadMoreProducts = () => {
+        if (currentPage >= lastPage || loadingMore) return;
+        fetchProducts({ page: currentPage + 1 }, true);
     };
 
     const handleAddToCart = async (event, product) => {
@@ -367,6 +383,14 @@ const HomePage = () => {
                             </div>
                         );
                     })}
+                </div>
+            )}
+
+            {!loading && products.length > 0 && currentPage < lastPage && (
+                <div style={{ textAlign: 'center', marginTop: 24 }}>
+                    <button className="hero-btn" onClick={loadMoreProducts} disabled={loadingMore}>
+                        {loadingMore ? 'Chargement...' : `Afficher plus (${products.length}/${totalProducts})`}
+                    </button>
                 </div>
             )}
         </Layout>
