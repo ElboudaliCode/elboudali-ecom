@@ -20,40 +20,43 @@ class AdminController extends Controller
     {
         $paidStatuses = ['confirmed', 'shipped', 'delivered'];
 
-        $totalRevenue = Order::whereIn('status', $paidStatuses)->sum('total_amount');
-        $todayRevenue = Order::whereIn('status', $paidStatuses)
+        $totalRevenue = $this->safeStat(fn () => Order::whereIn('status', $paidStatuses)->sum('total_amount'), 0);
+        $todayRevenue = $this->safeStat(fn () => Order::whereIn('status', $paidStatuses)
             ->whereDate('created_at', today())
-            ->sum('total_amount');
-        $monthRevenue = Order::whereIn('status', $paidStatuses)
+            ->sum('total_amount'), 0);
+        $monthRevenue = $this->safeStat(fn () => Order::whereIn('status', $paidStatuses)
             ->whereMonth('created_at', now()->month)
             ->whereYear('created_at', now()->year)
-            ->sum('total_amount');
+            ->sum('total_amount'), 0);
 
-        $totalOrdersCount = Order::count();
-        $todayOrdersCount = Order::whereDate('created_at', today())->count();
-        $averageOrderValue = Order::whereIn('status', $paidStatuses)->avg('total_amount') ?? 0;
+        $totalOrdersCount = $this->safeStat(fn () => Order::count(), 0);
+        $todayOrdersCount = $this->safeStat(fn () => Order::whereDate('created_at', today())->count(), 0);
+        $averageOrderValue = $this->safeStat(fn () => Order::whereIn('status', $paidStatuses)->avg('total_amount') ?? 0, 0);
 
-        $totalClientsCount = User::where('role', 'client')->count();
+        $totalClientsCount = $this->safeStat(fn () => User::where('role', 'client')->count(), 0);
 
-        $lowStockProducts = Product::with('category')->get()->filter(function ($product) {
-            $threshold = $product->category ? $product->category->seuil_alerte : 5;
-            return $product->quantity <= $threshold;
-        })->values();
+        $lowStockProducts = $this->safeStat(fn () => Product::with('category')
+            ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
+            ->whereColumn('products.quantity', '<=', 'categories.seuil_alerte')
+            ->select('products.*')
+            ->orderBy('products.quantity')
+            ->take(25)
+            ->get(), collect());
 
-        $recentOrders = Order::with('user:id,name,email')
+        $recentOrders = $this->safeStat(fn () => Order::with('user:id,name,email')
             ->orderBy('created_at', 'desc')
             ->take(5)
-            ->get();
+            ->get(), collect());
 
-        $categorySales = DB::table('order_items')
+        $categorySales = $this->safeStat(fn () => DB::table('order_items')
             ->join('products', 'order_items.product_id', '=', 'products.id')
             ->join('categories', 'products.category_id', '=', 'categories.id')
             ->select('categories.name as category', DB::raw('SUM(order_items.quantity * order_items.unit_price) as sales'))
             ->groupBy('categories.id', 'categories.name')
             ->orderByDesc('sales')
-            ->get();
+            ->get(), collect());
 
-        $topProducts = DB::table('order_items')
+        $topProducts = $this->safeStat(fn () => DB::table('order_items')
             ->select(
                 'product_id',
                 'product_name',
@@ -63,29 +66,20 @@ class AdminController extends Controller
             ->groupBy('product_id', 'product_name')
             ->orderByDesc('quantity_sold')
             ->take(5)
-            ->get();
+            ->get(), collect());
 
-        $statusCounts = Order::select('status', DB::raw('COUNT(*) as total'))
+        $statusCounts = $this->safeStat(fn () => Order::select('status', DB::raw('COUNT(*) as total'))
             ->groupBy('status')
-            ->pluck('total', 'status');
+            ->pluck('total', 'status'), collect());
 
-        $monthlyRevenue = Order::whereIn('status', $paidStatuses)
-            ->where('created_at', '>=', now()->subMonths(5)->startOfMonth())
-            ->select(
-                DB::raw("DATE_FORMAT(created_at, '%Y-%m') as month"),
-                DB::raw('SUM(total_amount) as revenue'),
-                DB::raw('COUNT(*) as orders')
-            )
-            ->groupBy('month')
-            ->orderBy('month')
-            ->get();
+        $monthlyRevenue = $this->safeStat(fn () => $this->monthlyRevenueSummary($paidStatuses), collect());
 
-        $openSupportCount = Conversation::where('status', 'open')->count();
-        $categoriesCount = Category::count();
-        $recentLogs = ActivityLog::with('user:id,name,role')
+        $openSupportCount = $this->safeStat(fn () => Conversation::where('status', 'open')->count(), 0);
+        $categoriesCount = $this->safeStat(fn () => Category::count(), 0);
+        $recentLogs = $this->safeStat(fn () => ActivityLog::with('user:id,name,role')
             ->orderBy('created_at', 'desc')
             ->take(5)
-            ->get();
+            ->get(), collect());
 
         return response()->json([
             'revenue' => $totalRevenue,
@@ -105,6 +99,37 @@ class AdminController extends Controller
             'categoriesCount' => $categoriesCount,
             'recentLogs' => $recentLogs,
         ]);
+    }
+
+    private function safeStat(callable $callback, mixed $default): mixed
+    {
+        try {
+            return $callback();
+        } catch (\Throwable $exception) {
+            report($exception);
+            return $default;
+        }
+    }
+
+    private function monthlyRevenueSummary(array $paidStatuses)
+    {
+        $start = now()->subMonths(5)->startOfMonth();
+
+        $orders = Order::whereIn('status', $paidStatuses)
+            ->where('created_at', '>=', $start)
+            ->get(['total_amount', 'created_at']);
+
+        return collect(range(0, 5))->map(function ($offset) use ($start, $orders) {
+            $month = $start->copy()->addMonths($offset);
+            $monthKey = $month->format('Y-m');
+            $monthOrders = $orders->filter(fn ($order) => $order->created_at->format('Y-m') === $monthKey);
+
+            return [
+                'month' => $monthKey,
+                'revenue' => (float) $monthOrders->sum('total_amount'),
+                'orders' => $monthOrders->count(),
+            ];
+        })->values();
     }
 
     /**
