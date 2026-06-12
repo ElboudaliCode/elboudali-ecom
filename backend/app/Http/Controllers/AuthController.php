@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password as PasswordBroker;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
@@ -108,7 +108,7 @@ class AuthController extends Controller
 
             try {
                 $this->ensurePasswordResetTokensTable();
-                $token = PasswordBroker::createToken($user);
+                $token = $this->createPasswordResetToken($user);
             } catch (\Throwable $exception) {
                 report($exception);
 
@@ -169,28 +169,42 @@ class AuthController extends Controller
             'password' => ['required', 'string', 'confirmed', Password::min(8)->letters()->numbers()],
         ]);
 
-        $status = PasswordBroker::reset(
-            $validated,
-            function (User $user, string $password) {
-                $user->forceFill([
-                    'password' => Hash::make($password),
-                    'remember_token' => Str::random(60),
-                ])->save();
+        $this->ensurePasswordResetTokensTable();
 
-                $user->tokens()->delete();
+        $record = DB::table('password_reset_tokens')
+            ->where('email', $validated['email'])
+            ->first();
 
-                event(new PasswordReset($user));
-            }
-        );
+        $expiresAt = $record?->created_at
+            ? Carbon::parse($record->created_at)->addMinutes((int) config('auth.passwords.users.expire', 60))
+            : null;
 
-        if ($status === PasswordBroker::PASSWORD_RESET) {
-            return response()->json([
-                'message' => 'Mot de passe reinitialise avec succes. Vous pouvez vous connecter.',
+        if (!$record || !Hash::check($validated['token'], $record->token) || !$expiresAt || now()->greaterThan($expiresAt)) {
+            throw ValidationException::withMessages([
+                'email' => ['Le lien de recuperation est invalide ou expire.'],
             ]);
         }
 
-        throw ValidationException::withMessages([
-            'email' => ['Le lien de recuperation est invalide ou expire.'],
+        $user = User::where('email', $validated['email'])->first();
+        if (!$user) {
+            throw ValidationException::withMessages([
+                'email' => ['Le lien de recuperation est invalide ou expire.'],
+            ]);
+        }
+
+        $user->forceFill([
+            'password' => Hash::make($validated['password']),
+            'remember_token' => Str::random(60),
+        ])->save();
+
+        $user->tokens()->delete();
+
+        DB::table('password_reset_tokens')->where('email', $validated['email'])->delete();
+
+        event(new PasswordReset($user));
+
+        return response()->json([
+            'message' => 'Mot de passe reinitialise avec succes. Vous pouvez vous connecter.',
         ]);
     }
 
@@ -209,6 +223,21 @@ class AuthController extends Controller
             'noura@demo.com',
             'superviseur@demo.com',
         ], true);
+    }
+
+    private function createPasswordResetToken(User $user): string
+    {
+        $token = Str::random(64);
+
+        DB::table('password_reset_tokens')->updateOrInsert(
+            ['email' => $user->email],
+            [
+                'token' => Hash::make($token),
+                'created_at' => now(),
+            ]
+        );
+
+        return $token;
     }
 
     private function ensurePasswordResetTokensTable(): void
