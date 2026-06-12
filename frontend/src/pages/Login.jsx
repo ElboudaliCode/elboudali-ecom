@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import Layout from '../components/Layout';
+import PasswordField from '../components/PasswordField';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -49,16 +50,13 @@ const Login = () => {
                                     required
                                 />
                             </div>
-                            <div className="form-group">
-                                <label>Mot de passe</label>
-                                <input
-                                    type="password"
-                                    placeholder="********"
-                                    value={password}
-                                    onChange={(event) => setPassword(event.target.value)}
-                                    required
-                                />
-                            </div>
+                            <PasswordField
+                                label="Mot de passe"
+                                value={password}
+                                onChange={(event) => setPassword(event.target.value)}
+                                required
+                                autoComplete="current-password"
+                            />
                             <div className="form-check">
                                 <input
                                     type="checkbox"

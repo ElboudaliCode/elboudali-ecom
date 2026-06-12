@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import Layout from '../components/Layout';
+import PasswordField from '../components/PasswordField';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -56,14 +57,20 @@ const Register = () => {
                                 <label>Adresse email</label>
                                 <input type="email" inputMode="email" autoCapitalize="none" autoCorrect="off" placeholder="email@exemple.com" value={email} onChange={(event) => setEmail(event.target.value)} required />
                             </div>
-                            <div className="form-group">
-                                <label>Mot de passe</label>
-                                <input type="password" placeholder="********" value={password} onChange={(event) => setPassword(event.target.value)} required />
-                            </div>
-                            <div className="form-group">
-                                <label>Confirmer le mot de passe</label>
-                                <input type="password" placeholder="********" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} required />
-                            </div>
+                            <PasswordField
+                                label="Mot de passe"
+                                value={password}
+                                onChange={(event) => setPassword(event.target.value)}
+                                required
+                                autoComplete="new-password"
+                            />
+                            <PasswordField
+                                label="Confirmer le mot de passe"
+                                value={passwordConfirmation}
+                                onChange={(event) => setPasswordConfirmation(event.target.value)}
+                                required
+                                autoComplete="new-password"
+                            />
                             <button type="submit" className="btn-primary-full">S'inscrire</button>
                         </form>
                         <div className="form-footer-link">

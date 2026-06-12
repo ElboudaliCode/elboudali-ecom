@@ -6,18 +6,21 @@ import Layout from '../components/Layout';
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState(null);
+    const [resetUrl, setResetUrl] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         setMessage(null);
+        setResetUrl(null);
         setError(null);
         setLoading(true);
 
         try {
             const response = await api.post('/forgot-password', { email: email.trim().toLowerCase() });
             setMessage(response.data.message);
+            setResetUrl(response.data.reset_url || null);
             setEmail('');
         } catch (err) {
             const errors = err.response?.data?.errors;
@@ -39,6 +42,11 @@ const ForgotPassword = () => {
                     </div>
                     <div className="form-box-body">
                         {message && <div className="alert alert-success">{message}</div>}
+                        {resetUrl && (
+                            <div className="alert alert-warning">
+                                Mode demo : <a href={resetUrl}>ouvrir le lien de recuperation</a>
+                            </div>
+                        )}
                         {error && <div className="form-error">{error}</div>}
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">

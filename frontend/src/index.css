@@ -688,6 +688,38 @@ select:focus, textarea:focus, input:focus {
   background: #fff;
 }
 .form-group input:focus { border-color: var(--orange); background: white; }
+.password-input-wrap {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+.password-input-wrap:focus-within {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+.password-input-wrap input {
+  flex: 1;
+  min-width: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.password-input-wrap button {
+  border: none;
+  border-left: 1px solid var(--border);
+  background: #F8FAFC;
+  color: var(--orange);
+  padding: 0 12px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+.password-input-wrap button:hover {
+  background: var(--orange-light);
+}
 .form-check { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 0.85rem; }
 .btn-primary-full {
   width: 100%; padding: 11px;

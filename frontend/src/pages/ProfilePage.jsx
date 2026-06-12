@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 import { AuthContext } from '../context/AuthContext';
 import Layout from '../components/Layout';
+import PasswordField from '../components/PasswordField';
 
 const ProfilePage = () => {
     const { user } = useContext(AuthContext);
@@ -108,14 +109,22 @@ const ProfilePage = () => {
                         <hr style={{ border: 'none', borderTop: '1px solid #eee' }} />
                         <h4 style={{ fontSize: '0.9rem', color: '#666', fontWeight: 700 }}>Changer le mot de passe (optionnel)</h4>
 
-                        <div className="form-group" style={{ margin: 0 }}>
-                            <label>Nouveau mot de passe</label>
-                            <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Laisser vide pour ne pas modifier" />
-                        </div>
-                        <div className="form-group" style={{ margin: 0 }}>
-                            <label>Confirmer le nouveau mot de passe</label>
-                            <input type="password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} placeholder="Laisser vide pour ne pas modifier" />
-                        </div>
+                        <PasswordField
+                            label="Nouveau mot de passe"
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
+                            placeholder="Laisser vide pour ne pas modifier"
+                            autoComplete="new-password"
+                            groupStyle={{ margin: 0 }}
+                        />
+                        <PasswordField
+                            label="Confirmer le nouveau mot de passe"
+                            value={passwordConfirmation}
+                            onChange={(event) => setPasswordConfirmation(event.target.value)}
+                            placeholder="Laisser vide pour ne pas modifier"
+                            autoComplete="new-password"
+                            groupStyle={{ margin: 0 }}
+                        />
 
                         <button type="submit" className="btn-primary-full" disabled={saving}>
                             {saving ? 'Sauvegarde...' : 'Enregistrer les modifications'}

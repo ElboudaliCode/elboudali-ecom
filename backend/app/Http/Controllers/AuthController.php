@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Favorite;
 use App\Models\Order;
 use App\Models\User;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password as PasswordBroker;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 
@@ -91,18 +95,101 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email', $validated['email'])->first();
+        $payload = [
+            'message' => 'Si cette adresse existe, un lien de recuperation a ete envoye.',
+        ];
 
         if ($user) {
+            ResetPassword::createUrlUsing(function (User $notifiable, string $token) {
+                return $this->passwordResetUrl($notifiable, $token);
+            });
+
+            try {
+                $token = PasswordBroker::createToken($user);
+                $user->sendPasswordResetNotification($token);
+            } catch (\Throwable $exception) {
+                report($exception);
+
+                NotificationController::createNotification(
+                    null,
+                    "Erreur email reset password pour {$user->email}. Verifiez la configuration SMTP.",
+                    'security'
+                );
+
+                return response()->json([
+                    'message' => 'Demande enregistree, mais l email de recuperation ne peut pas etre envoye maintenant.',
+                ], 500);
+            }
+
+            if ($this->canExposeDemoResetLink($user->email)) {
+                $payload['reset_url'] = $this->passwordResetUrl($user, $token);
+            }
+
             NotificationController::createNotification(
                 null,
-                "Demande de recuperation de mot de passe pour {$user->email}.",
+                "Lien de recuperation envoye pour {$user->email}.",
                 'security'
             );
         }
 
-        return response()->json([
-            'message' => 'Si cette adresse existe, une demande de recuperation a ete envoyee a l administration.',
+        return response()->json($payload);
+    }
+
+    /**
+     * Reinitialiser le mot de passe avec un token valide.
+     */
+    public function resetPassword(Request $request)
+    {
+        $request->merge([
+            'email' => strtolower(trim((string) $request->input('email'))),
         ]);
+
+        $validated = $request->validate([
+            'token' => 'required|string',
+            'email' => 'required|string|email',
+            'password' => ['required', 'string', 'confirmed', Password::min(8)->letters()->numbers()],
+        ]);
+
+        $status = PasswordBroker::reset(
+            $validated,
+            function (User $user, string $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password),
+                    'remember_token' => Str::random(60),
+                ])->save();
+
+                $user->tokens()->delete();
+
+                event(new PasswordReset($user));
+            }
+        );
+
+        if ($status === PasswordBroker::PASSWORD_RESET) {
+            return response()->json([
+                'message' => 'Mot de passe reinitialise avec succes. Vous pouvez vous connecter.',
+            ]);
+        }
+
+        throw ValidationException::withMessages([
+            'email' => ['Le lien de recuperation est invalide ou expire.'],
+        ]);
+    }
+
+    private function passwordResetUrl(User $user, string $token): string
+    {
+        $frontendUrl = rtrim((string) config('app.frontend_url', 'https://elboudali-ecom.vercel.app'), '/');
+
+        return $frontendUrl . '/reset-password?token=' . urlencode($token) . '&email=' . urlencode($user->getEmailForPasswordReset());
+    }
+
+    private function canExposeDemoResetLink(string $email): bool
+    {
+        return app()->environment('local') || in_array($email, [
+            'admin@demo.com',
+            'client@demo.com',
+            'noura@demo.com',
+            'superviseur@demo.com',
+        ], true);
     }
 
     /**
