@@ -7,11 +7,13 @@ use App\Models\Order;
 use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password as PasswordBroker;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
@@ -104,7 +106,16 @@ class AuthController extends Controller
                 return $this->passwordResetUrl($notifiable, $token);
             });
 
-            $token = PasswordBroker::createToken($user);
+            try {
+                $this->ensurePasswordResetTokensTable();
+                $token = PasswordBroker::createToken($user);
+            } catch (\Throwable $exception) {
+                report($exception);
+
+                return response()->json([
+                    'message' => 'Impossible de creer un lien de recuperation maintenant. Reessayez plus tard.',
+                ], 500);
+            }
 
             try {
                 $user->sendPasswordResetNotification($token);
@@ -198,6 +209,19 @@ class AuthController extends Controller
             'noura@demo.com',
             'superviseur@demo.com',
         ], true);
+    }
+
+    private function ensurePasswordResetTokensTable(): void
+    {
+        if (Schema::hasTable('password_reset_tokens')) {
+            return;
+        }
+
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
     }
 
     /**
