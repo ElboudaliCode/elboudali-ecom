@@ -116,6 +116,13 @@ class AuthController extends Controller
                     'security'
                 );
 
+                if (isset($token) && $this->canExposeDemoResetLink($user->email)) {
+                    return response()->json([
+                        'message' => 'Mode demo: SMTP non configure, utilisez le lien de recuperation ci-dessous.',
+                        'reset_url' => $this->passwordResetUrl($user, $token),
+                    ]);
+                }
+
                 return response()->json([
                     'message' => 'Demande enregistree, mais l email de recuperation ne peut pas etre envoye maintenant.',
                 ], 500);
