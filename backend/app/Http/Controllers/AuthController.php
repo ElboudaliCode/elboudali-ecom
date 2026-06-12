@@ -104,8 +104,9 @@ class AuthController extends Controller
                 return $this->passwordResetUrl($notifiable, $token);
             });
 
+            $token = PasswordBroker::createToken($user);
+
             try {
-                $token = PasswordBroker::createToken($user);
                 $user->sendPasswordResetNotification($token);
             } catch (\Throwable $exception) {
                 report($exception);
@@ -116,7 +117,7 @@ class AuthController extends Controller
                     'security'
                 );
 
-                if (isset($token) && $this->canExposeDemoResetLink($user->email)) {
+                if ($this->canExposeDemoResetLink($user->email)) {
                     return response()->json([
                         'message' => 'Mode demo: SMTP non configure, utilisez le lien de recuperation ci-dessous.',
                         'reset_url' => $this->passwordResetUrl($user, $token),
