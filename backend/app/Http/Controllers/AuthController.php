@@ -78,6 +78,34 @@ class AuthController extends Controller
     }
 
     /**
+     * Demande de recuperation du mot de passe.
+     */
+    public function forgotPassword(Request $request)
+    {
+        $request->merge([
+            'email' => strtolower(trim((string) $request->input('email'))),
+        ]);
+
+        $validated = $request->validate([
+            'email' => 'required|string|email',
+        ]);
+
+        $user = User::where('email', $validated['email'])->first();
+
+        if ($user) {
+            NotificationController::createNotification(
+                null,
+                "Demande de recuperation de mot de passe pour {$user->email}.",
+                'security'
+            );
+        }
+
+        return response()->json([
+            'message' => 'Si cette adresse existe, une demande de recuperation a ete envoyee a l administration.',
+        ]);
+    }
+
+    /**
      * Deconnexion.
      */
     public function logout(Request $request)
@@ -105,6 +133,12 @@ class AuthController extends Controller
     public function updateProfile(Request $request)
     {
         $user = $request->user();
+
+        if ($request->has('email')) {
+            $request->merge([
+                'email' => strtolower(trim((string) $request->input('email'))),
+            ]);
+        }
 
         $validated = $request->validate([
             'name' => 'sometimes|required|string|max:255',

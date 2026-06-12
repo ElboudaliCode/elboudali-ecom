@@ -114,6 +114,15 @@ select:focus, textarea:focus, input:focus {
   font-size: 1.25rem; font-weight: 800; color: var(--dark);
   white-space: nowrap;
 }
+.logo small {
+  display: block;
+  margin-top: -2px;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .logo-mark {
   width: 38px; height: 38px; border-radius: 10px;
   display: inline-flex; align-items: center; justify-content: center;
@@ -175,6 +184,70 @@ select:focus, textarea:focus, input:focus {
 }
 .footer a { color: #666; margin: 0 5px; }
 .footer a:hover { color: var(--orange); }
+.site-footer {
+  gap: 20px;
+  padding: 22px 24px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+}
+.footer-brand strong,
+.footer-contact strong {
+  display: block;
+  color: var(--dark);
+}
+.footer-brand small,
+.footer-contact span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+.footer-logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  flex: 0 0 auto;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.footer-links a {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--muted);
+  font-weight: 800;
+}
+.footer-links a:hover {
+  border-color: rgba(245, 158, 11, 0.35);
+  background: var(--orange-light);
+}
+.footer-contact {
+  text-align: right;
+}
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;
+  background: #16A34A;
+  color: white;
+  padding: 11px 16px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.28);
+}
+.whatsapp-float:hover {
+  background: #15803d;
+  color: white;
+}
 
 /* =============================================
    MAIN LAYOUT
@@ -279,6 +352,231 @@ select:focus, textarea:focus, input:focus {
 }
 .service-strip strong { display: block; color: var(--dark); font-size: 0.9rem; }
 .service-strip span { display: block; color: var(--muted); font-size: 0.78rem; margin-top: 3px; }
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.trust-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 4px 16px rgba(15,23,42,0.04);
+}
+.trust-card strong {
+  display: block;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+.trust-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+.category-showcase {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.category-tile {
+  min-height: 170px;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  background:
+    linear-gradient(160deg, rgba(15,23,42,0.82), rgba(15,23,42,0.38)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.category-tile.large {
+  min-height: 230px;
+  background:
+    linear-gradient(160deg, rgba(15,23,42,0.88), rgba(245,158,11,0.35)),
+    url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.category-tile:nth-child(2) {
+  background:
+    linear-gradient(160deg, rgba(15,23,42,0.82), rgba(15,23,42,0.28)),
+    url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.category-tile:nth-child(3) {
+  background:
+    linear-gradient(160deg, rgba(15,23,42,0.82), rgba(15,23,42,0.28)),
+    url('https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.category-tile span {
+  color: #FED7AA;
+  font-weight: 900;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+.category-tile h3 {
+  border: none;
+  color: white;
+  padding: 0;
+  margin: 5px 0 8px;
+  font-size: 1.15rem;
+}
+.category-tile p {
+  color: rgba(255,255,255,0.82);
+  max-width: 470px;
+  margin-bottom: 12px;
+  font-size: 0.86rem;
+}
+.category-tile button {
+  align-self: flex-start;
+  border: none;
+  border-radius: 999px;
+  background: var(--orange);
+  color: white;
+  font-weight: 900;
+  padding: 8px 13px;
+  cursor: pointer;
+}
+.price-range {
+  width: 100%;
+  margin-top: 8px;
+  accent-color: var(--orange);
+}
+.section-heading {
+  margin: 28px 0 14px;
+}
+.section-heading span {
+  color: var(--orange);
+  font-weight: 900;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+.section-heading h2 {
+  margin-top: 4px;
+  font-size: 1.3rem;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.04);
+}
+.testimonial-card p {
+  color: var(--dark);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.testimonial-card strong {
+  display: block;
+}
+.testimonial-card span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.about-hero {
+  min-height: 320px;
+  border-radius: 14px;
+  padding: 34px;
+  color: white;
+  background:
+    linear-gradient(115deg, rgba(15,23,42,0.92), rgba(15,23,42,0.50)),
+    url('https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+.about-hero h1 {
+  max-width: 720px;
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.about-hero p {
+  max-width: 650px;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 18px;
+}
+.info-grid,
+.contact-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.info-grid p,
+.contact-side p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.process-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.process-strip div {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.process-strip strong {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange);
+  color: white;
+}
+.process-strip span {
+  color: var(--muted);
+  font-weight: 700;
+}
+.contact-layout {
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  align-items: start;
+}
+.contact-side {
+  display: grid;
+  gap: 16px;
+}
+.contact-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.contact-line span {
+  color: var(--muted);
+  text-align: right;
+}
 
 /* =============================================
    PRODUCT GRID
@@ -627,6 +925,26 @@ input[type="radio"] {
   .home-hero { grid-template-columns: 1fr; padding: 24px; }
   .hero-content h1 { font-size: 1.65rem; }
   .service-strip { grid-template-columns: 1fr; }
+  .trust-grid,
+  .category-showcase,
+  .testimonial-grid,
+  .info-grid,
+  .process-strip,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .category-tile,
+  .category-tile.large,
+  .about-hero {
+    min-height: 220px;
+  }
+  .footer-contact {
+    text-align: center;
+  }
+  .whatsapp-float {
+    right: 12px;
+    bottom: 12px;
+  }
   .card-white form[style*="grid"] { grid-template-columns: 1fr !important; }
   .page-header { flex-direction: column; }
   .bottom-nav { overflow-x: auto; white-space: nowrap; }

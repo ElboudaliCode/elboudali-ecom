@@ -88,11 +88,12 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
     return (
         <div>
             <div className="topbar">
-                <div className="topbar-copy">Livraison rapide partout au Maroc</div>
+                <div className="topbar-copy">Livraison rapide partout au Maroc - Support 7j/7 - Paiement securise</div>
                 <div className="topbar-actions">
                     <button className="topbar-theme" onClick={() => setIsDarkMode(!isDarkMode)}>
                         {isDarkMode ? 'Mode clair' : 'Mode sombre'}
                     </button>
+                    <Link to="/contact" className="topbar-link">Contact</Link>
                     <Link to="/" className="topbar-link">Accueil</Link>
                 </div>
             </div>
@@ -100,7 +101,10 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
             <header className="header">
                 <Link to="/" className="logo">
                     <span className="logo-mark">E</span>
-                    <span>elboudali_ecom</span>
+                    <span>
+                        Elboudali Store
+                        <small>Marketplace Maroc</small>
+                    </span>
                 </Link>
 
                 <div className="search-bar-container">
@@ -208,6 +212,8 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
 
             <nav className="bottom-nav">
                 <Link to="/">Accueil</Link>
+                <Link to="/about">A propos</Link>
+                <Link to="/contact">Contact</Link>
                 {user && (user.role === 'admin' || user.role === 'superviseur') && (
                     <>
                         <Link to="/dashboard">Tableau de bord</Link>
@@ -278,15 +284,35 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
                 <main className="main-content">{children}</main>
             </div>
 
-            <footer className="footer">
-                <div>
-                    <a href="#">Aide</a> /
-                    <a href="/support"> Support</a> /
-                    <a href="#"> Contact</a>
+            <footer className="footer site-footer">
+                <div className="footer-brand">
+                    <span className="logo-mark footer-logo-mark">E</span>
+                    <div>
+                        <strong>Elboudali Store</strong>
+                        <small>Catalogue demo pret pour presentation et vente.</small>
+                    </div>
                 </div>
-                <div>Call Us: (+212) 6 00 00 00 00</div>
-                <div>{user ? `${user.name} (${user.role})` : 'Bienvenue'}</div>
+                <div className="footer-links">
+                    <Link to="/">Accueil</Link>
+                    <Link to="/about">A propos</Link>
+                    <Link to="/contact">Contact</Link>
+                    {user && <Link to="/support">Support</Link>}
+                    <Link to="/compare">Comparer</Link>
+                </div>
+                <div className="footer-contact">
+                    <strong>Call Us: (+212) 6 00 00 00 00</strong>
+                    <span>{user ? `${user.name} (${user.role})` : 'Bienvenue'}</span>
+                </div>
             </footer>
+
+            <a
+                className="whatsapp-float"
+                href="https://wa.me/212600000000?text=Bonjour%20Elboudali%20Store%2C%20je%20veux%20plus%20d'informations"
+                target="_blank"
+                rel="noreferrer"
+            >
+                WhatsApp
+            </a>
         </div>
     );
 };

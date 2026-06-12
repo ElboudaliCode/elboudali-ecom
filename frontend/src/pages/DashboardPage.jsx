@@ -51,6 +51,11 @@ const DashboardPage = () => {
         return Math.max(...stats.monthlyRevenue.map((month) => Number(month.revenue)));
     }, [stats]);
 
+    const paidOrdersCount = useMemo(() => {
+        if (!stats?.statusCounts) return 0;
+        return ['confirmed', 'shipped', 'delivered'].reduce((total, status) => total + Number(stats.statusCounts[status] || 0), 0);
+    }, [stats]);
+
     if (!user || (user.role !== 'admin' && user.role !== 'superviseur')) return <Navigate to="/" />;
     if (loading) return <Layout><div style={{ textAlign: 'center', padding: 60 }}>Chargement du tableau de bord...</div></Layout>;
     if (!stats) return <Layout><div className="card-white">Impossible de charger les statistiques.</div></Layout>;
@@ -95,6 +100,8 @@ const DashboardPage = () => {
                         <MetricCard title="Panier moyen" value={money(stats.averageOrderValue)} hint="Valeur moyenne par commande" color="#f97316" />
                         <MetricCard title="Clients" value={stats.clientsCount} hint="Comptes clients inscrits" color="#0f766e" />
                         <MetricCard title="Alertes stock" value={stats.lowStockProducts?.length || 0} hint="Produits sous le seuil d'alerte" color="#dc2626" />
+                        <MetricCard title="Support ouvert" value={stats.openSupportCount || 0} hint="Conversations client a suivre" color="#8b5cf6" />
+                        <MetricCard title="Categories" value={stats.categoriesCount || 0} hint="Structure du catalogue" color="#2563eb" />
                     </div>
 
                     <div className="card-white" style={{ marginBottom: 24, padding: 16 }}>
@@ -104,6 +111,16 @@ const DashboardPage = () => {
                             <Link to="/admin/orders" style={quickLinkStyle('#0284c7')}>Suivre les commandes</Link>
                             <Link to="/admin/coupons" style={quickLinkStyle('#16a34a')}>Creer un coupon</Link>
                             <Link to="/support" style={quickLinkStyle('#0f766e')}>Support clients</Link>
+                        </div>
+                    </div>
+
+                    <div className="card-white" style={{ marginBottom: 24, padding: 18 }}>
+                        <h3 style={{ fontSize: '0.98rem', fontWeight: 800, marginBottom: 14 }}>Sante commerciale</h3>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 14 }}>
+                            <HealthPill label="Commandes payables" value={`${paidOrdersCount}/${stats.ordersCount || 0}`} color="#16a34a" />
+                            <HealthPill label="Revenu aujourd'hui" value={money(stats.todayRevenue)} color="#0284c7" />
+                            <HealthPill label="Alerte stock" value={(stats.lowStockProducts?.length || 0) > 0 ? 'A verifier' : 'Stable'} color={(stats.lowStockProducts?.length || 0) > 0 ? '#dc2626' : '#16a34a'} />
+                            <HealthPill label="Support" value={(stats.openSupportCount || 0) > 0 ? 'Actif' : 'Calme'} color={(stats.openSupportCount || 0) > 0 ? '#8b5cf6' : '#16a34a'} />
                         </div>
                     </div>
 
@@ -226,6 +243,13 @@ const BarList = ({ title, items, labelKey, valueKey, maxValue, secondaryKey }) =
                 </div>
             );
         })}
+    </div>
+);
+
+const HealthPill = ({ label, value, color }) => (
+    <div style={{ background: `${color}12`, border: `1px solid ${color}33`, borderRadius: 10, padding: 14 }}>
+        <div style={{ color, fontWeight: 900, fontSize: '1.05rem', marginBottom: 4 }}>{value}</div>
+        <span style={{ color: '#64748B', fontWeight: 700, fontSize: '0.78rem' }}>{label}</span>
     </div>
 );
 

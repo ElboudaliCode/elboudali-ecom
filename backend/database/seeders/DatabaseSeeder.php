@@ -112,6 +112,19 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        $secondAddress = Address::updateOrCreate(
+            ['user_id' => $secondClient->id, 'title' => 'Bureau'],
+            [
+                'address_line1' => '28 Avenue Mohammed V',
+                'address_line2' => 'Etage 2',
+                'city' => 'Rabat',
+                'postal_code' => '10000',
+                'country' => 'Maroc',
+                'phone' => '+212611111111',
+                'is_default' => true,
+            ]
+        );
+
         $cart = Cart::firstOrCreate(['user_id' => $client->id]);
         CartItem::updateOrCreate(
             ['cart_id' => $cart->id, 'product_id' => $products[4]->id],
@@ -167,6 +180,8 @@ class DatabaseSeeder extends Seeder
                 'admin_note' => 'A verifier avec le service livraison.',
             ]
         );
+
+        $this->seedDemoOrders($client, $secondClient, $address, $secondAddress);
 
         Notification::updateOrCreate(
             ['user_id' => $client->id, 'message' => 'Votre commande TRK-DEMO-1001 est en cours de livraison.'],
@@ -567,6 +582,101 @@ class DatabaseSeeder extends Seeder
 
                 $this->syncProductGallery($product, $familyImages, $index);
             });
+        }
+    }
+
+    private function seedDemoOrders(User $client, User $secondClient, Address $address, Address $secondAddress): void
+    {
+        $products = Product::orderBy('id')->take(90)->get();
+        if ($products->count() < 10) {
+            return;
+        }
+
+        $statuses = ['pending', 'confirmed', 'shipped', 'delivered', 'cancelled'];
+        $methods = ['standard', 'express', 'pickup'];
+        $paymentMethods = ['cod', 'card', 'paypal'];
+        $paidStatuses = ['confirmed', 'shipped', 'delivered'];
+
+        foreach (range(1, 45) as $i) {
+            $user = $i % 3 === 0 ? $secondClient : $client;
+            $orderAddress = $user->id === $secondClient->id ? $secondAddress : $address;
+            $status = $statuses[$i % count($statuses)];
+            $deliveryMethod = $methods[$i % count($methods)];
+            $deliveryFee = $deliveryMethod === 'express' ? 45 : ($deliveryMethod === 'pickup' ? 0 : 30);
+            $createdAt = now()->subDays(120 - ($i * 2))->subHours($i % 8);
+            $lineCount = 1 + ($i % 3);
+            $lines = [];
+            $itemsTotal = 0;
+
+            foreach (range(1, $lineCount) as $line) {
+                $product = $products[(($i * 3) + $line) % $products->count()];
+                $quantity = 1 + (($i + $line) % 2);
+                $unitPrice = (float) $product->price;
+                $itemsTotal += $unitPrice * $quantity;
+                $lines[] = [
+                    'product' => $product,
+                    'quantity' => $quantity,
+                    'unit_price' => $unitPrice,
+                ];
+            }
+
+            $tracking = 'TRK-DEMO-' . str_pad((string) (2000 + $i), 4, '0', STR_PAD_LEFT);
+            $totalAmount = $itemsTotal + $deliveryFee;
+
+            $order = Order::updateOrCreate(
+                ['tracking_number' => $tracking],
+                [
+                    'user_id' => $user->id,
+                    'address_id' => $orderAddress->id,
+                    'status' => $status,
+                    'total_amount' => $totalAmount,
+                    'loyalty_points_used' => $i % 6 === 0 ? 20 : 0,
+                    'loyalty_points_earned' => in_array($status, $paidStatuses, true) ? (int) floor($totalAmount / 100) : 0,
+                    'loyalty_discount' => $i % 6 === 0 ? 20 : 0,
+                    'delivery_method' => $deliveryMethod,
+                    'delivery_fee' => $deliveryFee,
+                    'estimated_delivery_date' => $createdAt->copy()->addDays(3 + ($i % 4)),
+                ]
+            );
+
+            $order->forceFill([
+                'created_at' => $createdAt,
+                'updated_at' => $createdAt->copy()->addHours(2),
+            ])->saveQuietly();
+
+            OrderItem::where('order_id', $order->id)->delete();
+            foreach ($lines as $line) {
+                OrderItem::create([
+                    'order_id' => $order->id,
+                    'product_id' => $line['product']->id,
+                    'product_name' => $line['product']->name,
+                    'unit_price' => $line['unit_price'],
+                    'quantity' => $line['quantity'],
+                ]);
+            }
+
+            Payment::updateOrCreate(
+                ['order_id' => $order->id],
+                [
+                    'transaction_id' => 'PAY-' . $tracking,
+                    'payment_method' => $paymentMethods[$i % count($paymentMethods)],
+                    'amount' => $totalAmount,
+                    'status' => in_array($status, $paidStatuses, true) ? 'completed' : ($status === 'cancelled' ? 'failed' : 'pending'),
+                ]
+            );
+
+            if ($status === 'delivered' && $i % 11 === 0) {
+                OrderReturn::updateOrCreate(
+                    ['order_id' => $order->id],
+                    [
+                        'user_id' => $user->id,
+                        'reason' => 'Produit a echanger',
+                        'details' => 'Retour demo pour tester la gestion apres-vente.',
+                        'status' => 'requested',
+                        'admin_note' => 'Verifier avec le client avant validation.',
+                    ]
+                );
+            }
         }
     }
 

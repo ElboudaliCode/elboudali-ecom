@@ -23,6 +23,19 @@ const badgeStyle = {
     rating: { background: '#16a34a', color: 'white' },
 };
 
+const trustCards = [
+    { title: 'Livraison Maroc', text: 'Suivi commande, statut clair et estimation de livraison.' },
+    { title: 'Prix raisonnables', text: 'Catalogue demo avec prix proches du marche marocain.' },
+    { title: 'Support integre', text: 'Chat client, notifications et historique des demandes.' },
+    { title: 'Admin complet', text: 'Stock, commandes, retours, coupons et utilisateurs.' },
+];
+
+const testimonials = [
+    { name: 'Yassine', city: 'Casablanca', text: 'Interface claire, produits bien classes et checkout rapide.' },
+    { name: 'Noura', city: 'Rabat', text: 'Le suivi de commande et les notifications donnent confiance.' },
+    { name: 'Imane', city: 'Marrakech', text: 'Les prix sont lisibles et les categories facilitent la recherche.' },
+];
+
 const HomePage = () => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -185,6 +198,15 @@ const HomePage = () => {
     const newProducts = [...products].sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 4);
     const topRatedProducts = [...products].filter((product) => Number(product.reviews_avg_rating || 0) > 0).sort((a, b) => Number(b.reviews_avg_rating || 0) - Number(a.reviews_avg_rating || 0)).slice(0, 4);
     const lowStockProducts = products.filter((product) => product.quantity > 0 && product.quantity <= 5).slice(0, 4);
+    const bestSellerProducts = [...topRatedProducts, ...promoProducts, ...newProducts]
+        .filter((product, index, list) => list.findIndex((item) => item.id === product.id) === index)
+        .slice(0, 4);
+
+    const selectCategoryByName = (name) => {
+        const flatCategories = categories.flatMap((category) => [category, ...(category.children || [])]);
+        const match = flatCategories.find((category) => category.name.toLowerCase().includes(name.toLowerCase()));
+        if (match) handleCategorySelect(match.id);
+    };
 
     return (
         <Layout
@@ -231,10 +253,39 @@ const HomePage = () => {
                 <div><strong>Support client</strong><span>Messagerie et notifications</span></div>
             </section>
 
+            <section className="trust-grid">
+                {trustCards.map((card) => (
+                    <div key={card.title} className="trust-card">
+                        <strong>{card.title}</strong>
+                        <span>{card.text}</span>
+                    </div>
+                ))}
+            </section>
+
+            <section className="category-showcase">
+                <div className="category-tile large">
+                    <span>Selection premium</span>
+                    <h3>Smartphones, laptops et accessoires</h3>
+                    <p>Produits populaires avec images coherentes et prix vendeurs.</p>
+                    <button onClick={() => selectCategoryByName('Telephones')}>Explorer</button>
+                </div>
+                <div className="category-tile">
+                    <span>Mode</span>
+                    <h3>Looks du quotidien</h3>
+                    <button onClick={() => selectCategoryByName('Mode')}>Voir</button>
+                </div>
+                <div className="category-tile">
+                    <span>Maison</span>
+                    <h3>Pratique et utile</h3>
+                    <button onClick={() => selectCategoryByName('Maison')}>Voir</button>
+                </div>
+            </section>
+
             {!loading && (
                 <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12, marginBottom: 18 }}>
                     <DynamicMiniSection title="Promotions" items={promoProducts} />
                     <DynamicMiniSection title="Nouveautes" items={newProducts} />
+                    <DynamicMiniSection title="Meilleures ventes" items={bestSellerProducts} />
                     <DynamicMiniSection title="Mieux notes" items={topRatedProducts} />
                     <DynamicMiniSection title="Stock limite" items={lowStockProducts} />
                 </section>
@@ -249,6 +300,16 @@ const HomePage = () => {
                     <div>
                         <label style={labelStyle}>Prix max</label>
                         <input style={inputStyle} type="number" min="0" value={filters.max_price} onChange={(e) => setFilters({ ...filters, max_price: e.target.value })} placeholder="9999" />
+                        <input
+                            className="price-range"
+                            type="range"
+                            min="0"
+                            max="30000"
+                            step="100"
+                            value={filters.max_price || 30000}
+                            onChange={(e) => setFilters({ ...filters, max_price: e.target.value })}
+                        />
+                        <small style={{ color: '#94A3B8', fontWeight: 700 }}>{filters.max_price ? `${filters.max_price} Dhs max` : 'Tous les prix'}</small>
                     </div>
                     <div>
                         <label style={labelStyle}>Stock</label>
@@ -393,6 +454,22 @@ const HomePage = () => {
                     </button>
                 </div>
             )}
+
+            <section className="testimonials-section">
+                <div className="section-heading">
+                    <span>Confiance client</span>
+                    <h2>Ce que les clients remarquent rapidement</h2>
+                </div>
+                <div className="testimonial-grid">
+                    {testimonials.map((testimonial) => (
+                        <div key={testimonial.name} className="testimonial-card">
+                            <p>"{testimonial.text}"</p>
+                            <strong>{testimonial.name}</strong>
+                            <span>{testimonial.city}</span>
+                        </div>
+                    ))}
+                </div>
+            </section>
         </Layout>
     );
 };

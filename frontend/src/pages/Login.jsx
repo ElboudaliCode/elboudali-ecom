@@ -72,6 +72,9 @@ const Login = () => {
                                 Se connecter
                             </button>
                         </form>
+                        <div className="form-footer-link" style={{ marginTop: 12 }}>
+                            <Link to="/forgot-password">Mot de passe oublie ?</Link>
+                        </div>
                         <div className="form-footer-link">
                             Pas encore de compte ? <Link to="/register">S'inscrire</Link>
                         </div>
