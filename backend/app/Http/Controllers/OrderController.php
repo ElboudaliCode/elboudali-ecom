@@ -8,6 +8,7 @@ use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Payment;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,6 +26,18 @@ class OrderController extends Controller
             'use_loyalty_points' => 'nullable|boolean',
             'delivery_method' => 'nullable|in:standard,express,pickup',
         ]);
+
+        if ($validated['payment_method'] !== 'cod') {
+            return response()->json([
+                'error' => 'Le paiement en ligne sera active apres affiliation CMI/Payzone. Choisissez le paiement a la livraison.',
+            ], 503);
+        }
+
+        if (!config('store.payments.cod_enabled')) {
+            return response()->json([
+                'error' => 'Aucun moyen de paiement n est disponible actuellement.',
+            ], 503);
+        }
 
         $user = $request->user();
         $cart = Cart::with('items.product')->where('user_id', $user->id)->first();
@@ -98,23 +111,29 @@ class OrderController extends Controller
             ]);
 
             foreach ($cart->items as $item) {
+                $lockedProduct = Product::whereKey($item->product_id)->lockForUpdate()->firstOrFail();
+
+                if ($lockedProduct->quantity < $item->quantity) {
+                    throw new \RuntimeException("Stock insuffisant pour le produit : {$lockedProduct->name}");
+                }
+
                 OrderItem::create([
                     'order_id' => $order->id,
                     'product_id' => $item->product_id,
-                    'product_name' => $item->product->name,
-                    'unit_price' => $item->product->price,
+                    'product_name' => $lockedProduct->name,
+                    'unit_price' => $lockedProduct->price,
                     'quantity' => $item->quantity,
                 ]);
 
-                $item->product->decrement('quantity', $item->quantity);
+                $lockedProduct->decrement('quantity', $item->quantity);
             }
 
             Payment::create([
                 'order_id' => $order->id,
-                'transaction_id' => 'SIM-' . strtoupper(uniqid()),
+                'transaction_id' => 'COD-' . strtoupper(uniqid()),
                 'payment_method' => $validated['payment_method'],
                 'amount' => $totalAmount,
-                'status' => 'completed',
+                'status' => 'pending',
             ]);
 
             if ($coupon) {
@@ -123,10 +142,6 @@ class OrderController extends Controller
 
             if ($loyaltyPointsUsed > 0) {
                 $user->decrement('loyalty_points', $loyaltyPointsUsed);
-            }
-
-            if ($loyaltyPointsEarned > 0) {
-                $user->increment('loyalty_points', $loyaltyPointsEarned);
             }
 
             $cart->items()->delete();
@@ -140,8 +155,8 @@ class OrderController extends Controller
             if ($loyaltyPointsEarned > 0) {
                 NotificationController::createNotification(
                     $user->id,
-                    "Vous avez gagne {$loyaltyPointsEarned} points fidelite avec la commande #{$order->id}.",
-                    'success'
+                    "{$loyaltyPointsEarned} points fidelite seront ajoutes apres livraison de la commande #{$order->id}.",
+                    'info'
                 );
             }
 
@@ -161,14 +176,22 @@ class OrderController extends Controller
                     'discount' => $loyaltyDiscount,
                     'points_earned' => $loyaltyPointsEarned,
                     'current_points' => $user->fresh()->loyalty_points,
+                    'points_status' => 'pending_delivery',
                 ],
             ], 201);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             DB::rollBack();
-            return response()->json([
+            $payload = [
                 'error' => 'Erreur lors de la validation de la commande.',
-                'details' => $e->getMessage(),
-            ], 500);
+            ];
+
+            if (app()->environment('local')) {
+                $payload['details'] = $e->getMessage();
+            }
+
+            report($e);
+
+            return response()->json($payload, 500);
         }
     }
 
@@ -206,9 +229,46 @@ class OrderController extends Controller
             'status' => 'required|in:confirmed,shipped,delivered,cancelled',
         ]);
 
-        $order = Order::findOrFail($id);
-        $order->status = $request->status;
-        $order->save();
+        $order = DB::transaction(function () use ($request, $id) {
+            $order = Order::with(['items.product', 'payment', 'user'])->lockForUpdate()->findOrFail($id);
+            $previousStatus = $order->status;
+
+            if ($previousStatus === 'cancelled' && $request->status !== 'cancelled') {
+                abort(422, 'Une commande annulee ne peut pas etre reactivee.');
+            }
+
+            if ($previousStatus === 'delivered' && $request->status === 'cancelled') {
+                abort(422, 'Utilisez le module de retours pour une commande deja livree.');
+            }
+
+            if ($request->status === 'cancelled' && $previousStatus !== 'cancelled') {
+                foreach ($order->items as $item) {
+                    $item->product?->increment('quantity', $item->quantity);
+                }
+
+                if ($order->loyalty_points_used > 0) {
+                    $order->user?->increment('loyalty_points', $order->loyalty_points_used);
+                }
+
+                if ($order->payment) {
+                    $order->payment->update([
+                        'status' => $order->payment->status === 'completed' ? 'refunded' : 'failed',
+                    ]);
+                }
+            }
+
+            if ($request->status === 'delivered' && $previousStatus !== 'delivered') {
+                $order->payment?->update(['status' => 'completed']);
+
+                if ($order->loyalty_points_earned > 0) {
+                    $order->user?->increment('loyalty_points', $order->loyalty_points_earned);
+                }
+            }
+
+            $order->update(['status' => $request->status]);
+
+            return $order->fresh(['items', 'payment', 'user']);
+        });
 
         $statusLabels = [
             'confirmed' => 'confirmee',
@@ -248,8 +308,16 @@ class OrderController extends Controller
 
         $rows = $order->items->map(function ($item) {
             $lineTotal = number_format($item->unit_price * $item->quantity, 2);
-            return "<tr><td>{$item->product_name}</td><td>{$item->quantity}</td><td>" . number_format($item->unit_price, 2) . " Dhs</td><td>{$lineTotal} Dhs</td></tr>";
+            $productName = e($item->product_name);
+            return "<tr><td>{$productName}</td><td>{$item->quantity}</td><td>" . number_format($item->unit_price, 2) . " Dhs</td><td>{$lineTotal} Dhs</td></tr>";
         })->implode('');
+
+        $storeName = e((string) config('store.name'));
+        $storeEmail = e((string) config('store.email'));
+        $clientName = e($order->user->name);
+        $clientEmail = e($order->user->email);
+        $deliveryMethod = e($order->delivery_method);
+        $trackingNumber = e($order->tracking_number);
 
         $html = "<!doctype html>
         <html><head><meta charset='utf-8'><title>Facture #{$order->id}</title>
@@ -262,8 +330,8 @@ class OrderController extends Controller
         .muted{color:#64748B;font-size:13px}.print{margin-top:24px}
         @media print{.print{display:none}}
         </style></head><body>
-        <div class='head'><div><h1>ELBOUDALI Ecom</h1><p class='muted'>Facture officielle</p></div><div><strong>Facture #FAC-{$order->id}</strong><br>Date: {$order->created_at->format('d/m/Y H:i')}</div></div>
-        <p><strong>Client:</strong> {$order->user->name}<br><strong>Email:</strong> {$order->user->email}<br><strong>Livraison:</strong> {$order->delivery_method} - {$order->delivery_fee} Dhs<br><strong>Tracking:</strong> {$order->tracking_number}</p>
+        <div class='head'><div><h1>{$storeName}</h1><p class='muted'>Facture officielle - {$storeEmail}</p></div><div><strong>Facture #FAC-{$order->id}</strong><br>Date: {$order->created_at->format('d/m/Y H:i')}</div></div>
+        <p><strong>Client:</strong> {$clientName}<br><strong>Email:</strong> {$clientEmail}<br><strong>Livraison:</strong> {$deliveryMethod} - {$order->delivery_fee} Dhs<br><strong>Tracking:</strong> {$trackingNumber}</p>
         <table><thead><tr><th>Produit</th><th>Qte</th><th>Prix</th><th>Total</th></tr></thead><tbody>{$rows}</tbody></table>
         <div class='total'>Total TTC: " . number_format($order->total_amount, 2) . " Dhs</div>
         <button class='print' onclick='window.print()'>Imprimer / Enregistrer PDF</button>

@@ -28,6 +28,8 @@ import AdminDeliveryPage from './pages/AdminDeliveryPage';
 import ReturnsPage from './pages/ReturnsPage';
 import NotFound from './pages/NotFound';
 import Unauthorized from './pages/Unauthorized';
+import LegalPage from './pages/LegalPage';
+import AdminContactMessagesPage from './pages/AdminContactMessagesPage';
 
 function App() {
   const { loading, user } = useContext(AuthContext);
@@ -47,6 +49,9 @@ function App() {
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/privacy" element={<LegalPage type="privacy" />} />
+      <Route path="/terms" element={<LegalPage type="terms" />} />
+      <Route path="/shipping-returns" element={<LegalPage type="shipping" />} />
       <Route path="/products/:id" element={<ProductDetailPage />} />
       <Route path="/compare" element={<ComparePage />} />
 
@@ -66,6 +71,7 @@ function App() {
       <Route path="/admin/returns"    element={isAdminOrSuperviseur ? <AdminReturnsPage />  : <Unauthorized />} />
       <Route path="/admin/delivery"   element={isAdminOrSuperviseur ? <AdminDeliveryPage /> : <Unauthorized />} />
       <Route path="/admin/logs"       element={isAdminOrSuperviseur ? <ActivityLogsPage />  : <Unauthorized />} />
+      <Route path="/admin/contact-messages" element={isAdminOrSuperviseur ? <AdminContactMessagesPage /> : <Unauthorized />} />
 
       {/* ---- PAGES ADMIN UNIQUEMENT ---- */}
       <Route path="/admin/categories" element={isAdmin ? <AdminCategoriesPage /> : <Unauthorized />} />

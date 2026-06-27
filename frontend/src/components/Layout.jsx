@@ -4,6 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import { CartContext } from '../context/CartContext';
 import api from '../api/axios';
 import { storageUrl } from '../api/config';
+import { storeConfig, whatsappUrl } from '../config/store';
 
 const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySelect }) => {
     const { user, logout } = useContext(AuthContext);
@@ -88,7 +89,7 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
     return (
         <div>
             <div className="topbar">
-                <div className="topbar-copy">Livraison rapide partout au Maroc - Support 7j/7 - Paiement securise</div>
+                <div className="topbar-copy">Livraison rapide partout au Maroc - Support {storeConfig.supportHours} - Paiement securise</div>
                 <div className="topbar-actions">
                     <button className="topbar-theme" onClick={() => setIsDarkMode(!isDarkMode)}>
                         {isDarkMode ? 'Mode clair' : 'Mode sombre'}
@@ -100,10 +101,10 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
 
             <header className="header">
                 <Link to="/" className="logo">
-                    <span className="logo-mark">E</span>
+                    <span className="logo-mark">{storeConfig.name.charAt(0).toUpperCase()}</span>
                     <span>
-                        Elboudali Store
-                        <small>Marketplace Maroc</small>
+                        {storeConfig.name}
+                        <small>{storeConfig.tagline}</small>
                     </span>
                 </Link>
 
@@ -223,6 +224,7 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
                         <Link to="/admin/returns">Retours</Link>
                         <Link to="/admin/categories">Categories</Link>
                         <Link to="/admin/logs">Logs</Link>
+                        <Link to="/admin/contact-messages">Messages</Link>
                     </>
                 )}
                 {user?.role === 'admin' && (
@@ -286,10 +288,10 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
 
             <footer className="footer site-footer">
                 <div className="footer-brand">
-                    <span className="logo-mark footer-logo-mark">E</span>
+                    <span className="logo-mark footer-logo-mark">{storeConfig.name.charAt(0).toUpperCase()}</span>
                     <div>
-                        <strong>Elboudali Store</strong>
-                        <small>Catalogue demo pret pour presentation et vente.</small>
+                        <strong>{storeConfig.name}</strong>
+                        <small>{storeConfig.tagline}</small>
                     </div>
                 </div>
                 <div className="footer-links">
@@ -298,16 +300,19 @@ const Layout = ({ children, onSearch, categories, selectedCategory, onCategorySe
                     <Link to="/contact">Contact</Link>
                     {user && <Link to="/support">Support</Link>}
                     <Link to="/compare">Comparer</Link>
+                    <Link to="/privacy">Confidentialite</Link>
+                    <Link to="/terms">CGV</Link>
+                    <Link to="/shipping-returns">Livraison & retours</Link>
                 </div>
                 <div className="footer-contact">
-                    <strong>Call Us: (+212) 6 00 00 00 00</strong>
-                    <span>{user ? `${user.name} (${user.role})` : 'Bienvenue'}</span>
+                    <strong>{storeConfig.phone}</strong>
+                    <span>{storeConfig.email}</span>
                 </div>
             </footer>
 
             <a
                 className="whatsapp-float"
-                href="https://wa.me/212600000000?text=Bonjour%20Elboudali%20Store%2C%20je%20veux%20plus%20d'informations"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
             >

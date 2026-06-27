@@ -14,6 +14,9 @@ Modern e-commerce web application built with Laravel 12 and React/Vite.
 - Favorites with personal notes.
 - Loyalty points and discounts.
 - Notifications and support tickets.
+- Public contact form with admin message management.
+- Legal pages for privacy, sales terms, delivery and returns.
+- Production-safe COD lifecycle; online card payment is blocked until a real provider is connected.
 - Security improvements: rate limits, stronger passwords, security headers and token cleanup.
 
 ## Tech Stack

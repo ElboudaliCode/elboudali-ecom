@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
+import { storeConfig } from '../config/store';
 
 const AboutPage = () => (
     <Layout>
         <div className="page-header">
             <div>
                 <div className="page-breadcrumb"><Link to="/">Accueil</Link> / A propos</div>
-                <h2>A propos de Elboudali Store</h2>
+                <h2>A propos de {storeConfig.name}</h2>
                 <p>Une boutique e-commerce complete pour vendre, gerer le stock, suivre les commandes et accompagner les clients.</p>
             </div>
         </div>
 
         <section className="about-hero">
             <div>
-                <span className="hero-kicker">Projet pret pour demonstration</span>
+                <span className="hero-kicker">Boutique en ligne marocaine</span>
                 <h1>Une experience e-commerce moderne pour le marche marocain.</h1>
                 <p>
-                    Elboudali Store combine un catalogue riche, une administration claire, des commandes suivies,
+                    {storeConfig.name} combine un catalogue riche, une administration claire, des commandes suivies,
                     un support client et des statistiques pour presenter un projet credible a un client ou investisseur.
                 </p>
                 <div className="hero-actions">

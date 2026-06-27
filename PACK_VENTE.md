@@ -26,7 +26,7 @@ Comptes demo:
 ## Fonctionnalites vendables
 
 - Catalogue produits avec categories, images, badges, promotions et filtres avances.
-- Panier, checkout, adresse, methode de paiement et suivi commande.
+- Panier, checkout, adresse, paiement a la livraison securise et suivi commande.
 - Back-office admin avec statistiques, gestion produits, categories, commandes et exports.
 - Gestion livraison avec statut, frais, date estimee et tracking.
 - Retours clients avec validation admin.
@@ -35,6 +35,8 @@ Comptes demo:
 - Avis clients avec images.
 - Notifications client/admin.
 - Support/tickets entre client et equipe.
+- Formulaire contact public avec suivi dans l administration.
+- Pages confidentialite, CGV, livraison, retours et remboursements.
 - Securite: throttling, validation mot de passe, headers securite, gestion 401.
 - Documentation installation et configuration production.
 
@@ -72,7 +74,7 @@ Le prix depend surtout de:
 
 ## Options a vendre en plus
 
-- Integration paiement en ligne CMI/Stripe/PayPal.
+- Integration paiement en ligne CMI ou Payzone apres affiliation marchand.
 - Dashboard financier plus avance.
 - Emails automatiques facture/livraison.
 - Module WhatsApp commande/support.
@@ -84,10 +86,11 @@ Le prix depend surtout de:
 ## Checklist avant remise client
 
 - Remplacer le nom, logo, couleurs et images selon le client.
-- Creer une base propre avec `php artisan migrate --seed`.
+- Creer une base propre avec `php artisan migrate --force` et importer uniquement les donnees du client.
 - Changer tous les comptes demo.
 - Mettre `APP_ENV=production` et `APP_DEBUG=false`.
 - Configurer `APP_URL`, `FRONTEND_URL`, `VITE_API_URL`, `VITE_STORAGE_URL`.
+- Configurer identite, contact, SMTP et `SEED_DEMO_DATA=false`.
 - Lancer `php artisan storage:link`.
 - Tester login, achat, commande, livraison, retour, support et dashboard.
 - Faire une sauvegarde de la base apres installation.

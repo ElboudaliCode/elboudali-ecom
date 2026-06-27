@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\StoreController;
 
 // ==========================================
 // ROUTES PUBLIQUES
@@ -13,6 +15,9 @@ Route::post('/register', [AuthController::class, 'register'])->middleware('throt
 Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:auth');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->middleware('throttle:auth');
 Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middleware('throttle:auth');
+Route::post('/contact', [ContactController::class, 'store'])->middleware('throttle:support');
+Route::get('/store/config', [StoreController::class, 'config']);
+Route::get('/health', [StoreController::class, 'health']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
@@ -89,6 +94,8 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::middleware(['auth:sanctum', 'superviseur'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboardStats']);
     Route::get('/admin/activity-logs', [AdminController::class, 'activityLogs']);
+    Route::get('/admin/contact-messages', [ContactController::class, 'index']);
+    Route::put('/admin/contact-messages/{contactMessage}/status', [ContactController::class, 'updateStatus']);
     Route::get('/admin/orders', [OrderController::class, 'adminOrders']);
     Route::put('/admin/orders/{id}/status', [OrderController::class, 'updateStatus']);
     Route::get('/admin/returns', [OrderReturnController::class, 'adminIndex']);

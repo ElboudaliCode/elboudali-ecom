@@ -25,7 +25,7 @@ const badgeStyle = {
 
 const trustCards = [
     { title: 'Livraison Maroc', text: 'Suivi commande, statut clair et estimation de livraison.' },
-    { title: 'Prix raisonnables', text: 'Catalogue demo avec prix proches du marche marocain.' },
+    { title: 'Prix raisonnables', text: 'Catalogue organise avec des prix adaptes au marche marocain.' },
     { title: 'Support integre', text: 'Chat client, notifications et historique des demandes.' },
     { title: 'Admin complet', text: 'Stock, commandes, retours, coupons et utilisateurs.' },
 ];

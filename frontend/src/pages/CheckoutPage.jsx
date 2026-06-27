@@ -10,7 +10,8 @@ const CheckoutPage = () => {
     const { user } = useContext(AuthContext);
     const [addresses, setAddresses] = useState([]);
     const [selectedAddress, setSelectedAddress] = useState('');
-    const [paymentMethod, setPaymentMethod] = useState('card');
+    const [paymentMethod, setPaymentMethod] = useState('cod');
+    const [paymentConfig, setPaymentConfig] = useState({ cod_enabled: true, card_enabled: false, paypal_enabled: false, provider: 'none' });
     const [deliveryMethod, setDeliveryMethod] = useState('standard');
     const [couponCode, setCouponCode] = useState('');
     const [appliedCoupon, setAppliedCoupon] = useState(null);
@@ -30,7 +31,23 @@ const CheckoutPage = () => {
             return;
         }
         fetchAddresses();
+        fetchStoreConfig();
     }, [cart, navigate]);
+
+    const fetchStoreConfig = async () => {
+        try {
+            const response = await api.get('/store/config');
+            const payments = response.data.payments || {};
+            setPaymentConfig((current) => ({ ...current, ...payments }));
+
+            if (!payments.cod_enabled) {
+                if (payments.card_enabled) setPaymentMethod('card');
+                else if (payments.paypal_enabled) setPaymentMethod('paypal');
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     const fetchAddresses = async () => {
         setLoading(true);
@@ -90,7 +107,8 @@ const CheckoutPage = () => {
             await clearCart();
             navigate('/orders');
         } catch (err) {
-            setError(err.response?.data?.error || 'Erreur lors de la commande.');
+            const errors = err.response?.data?.errors;
+            setError(errors ? Object.values(errors).flat().join(' ') : (err.response?.data?.error || 'Erreur lors de la commande.'));
         } finally {
             setSubmitting(false);
         }
@@ -116,6 +134,11 @@ const CheckoutPage = () => {
     const deliveryFee = deliveryOptions[deliveryMethod].fee;
     const total = Math.max(0, totalAfterCoupon - loyaltyDiscount) + deliveryFee;
     const loyaltyPointsEarned = Math.floor(total / 10);
+    const paymentOptions = [
+        paymentConfig.card_enabled && ['card', 'Carte bancaire'],
+        paymentConfig.paypal_enabled && ['paypal', 'PayPal'],
+        paymentConfig.cod_enabled && ['cod', 'Paiement a la livraison'],
+    ].filter(Boolean);
 
     return (
         <Layout>
@@ -129,8 +152,8 @@ const CheckoutPage = () => {
 
             {error && <div className="alert alert-danger">{error}</div>}
 
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
-                <div style={{ flex: 2, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div className="checkout-layout">
+                <div className="checkout-main">
 
                     <div className="card-white">
                         <h3>1. Adresse de livraison</h3>
@@ -167,13 +190,18 @@ const CheckoutPage = () => {
                     <div className="card-white">
                         <h3>2. Mode de paiement</h3>
                         <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '8px' }}>
-                            {[['card', '💳 Carte Bancaire'], ['paypal', '🅿️ PayPal'], ['cod', '💵 Paiement à la livraison']].map(([val, label]) => (
+                            {paymentOptions.map(([val, label]) => (
                                 <label key={val} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 16px', border: `2px solid ${paymentMethod === val ? '#FFA500' : '#e0e0e0'}`, borderRadius: '6px', cursor: 'pointer', background: paymentMethod === val ? '#fff3e0' : 'white', fontSize: '0.88rem' }}>
                                     <input type="radio" name="payment" value={val} checked={paymentMethod === val} onChange={(e) => setPaymentMethod(e.target.value)} />
                                     {label}
                                 </label>
                             ))}
                         </div>
+                        {!paymentConfig.card_enabled && (
+                            <div className="alert alert-warning" style={{ marginTop: 12, marginBottom: 0 }}>
+                                Le paiement par carte sera active apres affiliation CMI/Payzone. Aucun numero de carte n est collecte par ce site.
+                            </div>
+                        )}
                     </div>
 
                     <div className="card-white">
@@ -191,7 +219,7 @@ const CheckoutPage = () => {
                     </div>
                 </div>
 
-                <div style={{ flex: 1, minWidth: '260px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                <div className="checkout-summary-column">
                     <div className="card-white">
                         <h3>Votre commande</h3>
                         {items.map(item => (
@@ -205,6 +233,7 @@ const CheckoutPage = () => {
                             <input type="text" placeholder="Code promo" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} style={{ flex: 1, padding: '7px 10px', border: '1px solid #e0e0e0', borderRadius: '5px', fontSize: '0.85rem' }} />
                             <button type="submit" style={{ padding: '7px 12px', background: '#6c757d', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>OK</button>
                         </form>
+                        {couponError && <div className="alert alert-danger" style={{ padding: 8 }}>{couponError}</div>}
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '6px' }}>
                             <span>Sous-total</span><span>{subtotal.toFixed(2)} Dhs</span>
                         </div>
