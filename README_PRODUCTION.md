@@ -90,22 +90,27 @@ VITE_STORE_ICE=
 VITE_STORE_RC=
 ```
 
-## 4. Email SMTP
+## 4. Email SMTP Gmail
 
-Le reset password utilise un vrai email lorsque SMTP est configure:
+Le reset password envoie un vrai email lorsque SMTP est configure. Dans Google,
+activer la validation en deux etapes, puis creer un mot de passe d'application.
+Ajouter ensuite ces variables au service backend Railway (onglet `Variables`):
 
 ```env
 MAIL_MAILER=smtp
-MAIL_SCHEME=tls
-MAIL_HOST=smtp.votre-fournisseur.com
+MAIL_SCHEME=smtp
+MAIL_HOST=smtp.gmail.com
 MAIL_PORT=587
-MAIL_USERNAME=contact@votre-domaine.com
-MAIL_PASSWORD=mot-de-passe-application
-MAIL_FROM_ADDRESS=contact@votre-domaine.com
+MAIL_USERNAME=votre-adresse@gmail.com
+MAIL_PASSWORD=mot-de-passe-application-google-16-caracteres
+MAIL_FROM_ADDRESS=votre-adresse@gmail.com
 MAIL_FROM_NAME="Nom boutique"
 ```
 
-Ne jamais committer les identifiants SMTP. Tester avec un compte client reel avant livraison.
+`MAIL_FROM_ADDRESS` doit etre la meme adresse Gmail que `MAIL_USERNAME`. Coller le
+mot de passe d'application sans espaces, puis redeployer le backend. Ne jamais
+utiliser le mot de passe normal du compte Gmail et ne jamais committer les
+identifiants SMTP. Tester ensuite avec un compte client utilisant une vraie adresse.
 
 ## 5. Paiement
 
