@@ -19,4 +19,4 @@ RUN composer dump-autoload --optimize \
 
 EXPOSE 8080
 
-CMD sh -c "php artisan storage:link || true && php artisan migrate --force && if [ \"${SEED_DEMO_DATA:-false}\" = \"true\" ]; then php artisan db:seed --class=DatabaseSeeder --force; fi && php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
+CMD sh -c "php artisan storage:link || true && php artisan migrate --force && php artisan db:seed --class=DatabaseSeeder --force && php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
