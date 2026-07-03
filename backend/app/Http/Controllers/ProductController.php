@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActivityLog;
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -14,21 +17,26 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $query = Product::with('category')
+            ->where('is_active', true)
             ->withAvg('reviews', 'rating')
             ->withCount('reviews');
 
         // Filtrer par recherche (nom ou description)
-        if ($request->has('search') && !empty($request->search)) {
-            $searchTerm = '%' . $request->search . '%';
+        if ($request->has('search') && ! empty($request->search)) {
+            $searchTerm = '%'.$request->search.'%';
             $query->where(function ($q) use ($searchTerm) {
                 $q->where('name', 'LIKE', $searchTerm)
-                  ->orWhere('description', 'LIKE', $searchTerm);
+                    ->orWhere('description', 'LIKE', $searchTerm);
             });
         }
 
         // Filtrer par catégorie
-        if ($request->has('category_id') && !empty($request->category_id)) {
+        if ($request->has('category_id') && ! empty($request->category_id)) {
             $query->where('category_id', $request->category_id);
+        }
+
+        if ($request->filled('brand')) {
+            $query->where('brand', $request->brand);
         }
 
         if ($request->filled('min_price')) {
@@ -103,6 +111,7 @@ class ProductController extends Controller
             }
 
             $product->badges = $badges;
+
             return $product;
         });
 
@@ -114,15 +123,16 @@ class ProductController extends Controller
      */
     public function searchSuggestions(Request $request)
     {
-        if (!$request->has('q') || empty($request->q)) {
+        if (! $request->has('q') || empty($request->q)) {
             return response()->json([]);
         }
 
-        $searchTerm = '%' . $request->q . '%';
-        $suggestions = Product::where('name', 'LIKE', $searchTerm)
-                              ->select('id', 'name', 'price', 'image')
-                              ->take(5)
-                              ->get();
+        $searchTerm = '%'.$request->q.'%';
+        $suggestions = Product::where('is_active', true)
+            ->where('name', 'LIKE', $searchTerm)
+            ->select('id', 'name', 'price', 'image')
+            ->take(5)
+            ->get();
 
         return response()->json($suggestions);
     }
@@ -150,7 +160,7 @@ class ProductController extends Controller
         }
 
         $validated['is_promo'] = $request->boolean('is_promo');
-        if (!$validated['is_promo']) {
+        if (! $validated['is_promo']) {
             $validated['old_price'] = null;
         }
 
@@ -161,7 +171,7 @@ class ProductController extends Controller
             $files = $request->file('gallery_images');
             foreach ($files as $index => $file) {
                 $path = $file->store('products', 'public');
-                \App\Models\ProductImage::create([
+                ProductImage::create([
                     'product_id' => $product->id,
                     'image_path' => $path,
                     'sort_order' => $index,
@@ -170,15 +180,15 @@ class ProductController extends Controller
         }
 
         // Enregistrer l'activité
-        \App\Models\ActivityLog::create([
-            'user_id' => \Illuminate\Support\Facades\Auth::id(),
+        ActivityLog::create([
+            'user_id' => Auth::id(),
             'action' => 'PRODUCT_CREATE',
-            'description' => "Création du produit '{$product->name}' (Stock initial: {$product->quantity}, Prix: {$product->price} Dhs)"
+            'description' => "Création du produit '{$product->name}' (Stock initial: {$product->quantity}, Prix: {$product->price} Dhs)",
         ]);
 
         return response()->json([
             'message' => 'Produit ajouté avec succès',
-            'product' => $product->load('images')
+            'product' => $product->load('images'),
         ], 201);
     }
 
@@ -187,18 +197,21 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::with(['category', 'images', 'reviews.user:id,name', 'reviews.images'])->findOrFail($id);
+        $product = Product::with(['category', 'images', 'reviews.user:id,name', 'reviews.images'])
+            ->where('is_active', true)
+            ->findOrFail($id);
 
         // Récupérer 4 produits de la même catégorie (différents de celui-ci)
         $similarProducts = Product::where('category_id', $product->category_id)
-                                  ->where('id', '!=', $product->id)
-                                  ->inRandomOrder()
-                                  ->take(4)
-                                  ->get();
+            ->where('is_active', true)
+            ->where('id', '!=', $product->id)
+            ->inRandomOrder()
+            ->take(4)
+            ->get();
 
         return response()->json([
             'product' => $product,
-            'similarProducts' => $similarProducts
+            'similarProducts' => $similarProducts,
         ]);
     }
 
@@ -232,13 +245,13 @@ class ProductController extends Controller
         }
 
         $validated['is_promo'] = $request->boolean('is_promo');
-        if (!$validated['is_promo']) {
+        if (! $validated['is_promo']) {
             $validated['old_price'] = null;
         }
 
         $product->update($validated);
 
-        if (!$wasPromo && $product->is_promo) {
+        if (! $wasPromo && $product->is_promo) {
             $favoriteUserIds = $product->favoritedBy()->pluck('users.id');
             foreach ($favoriteUserIds as $userId) {
                 NotificationController::createNotification(
@@ -255,7 +268,7 @@ class ProductController extends Controller
             $maxOrder = $product->images()->max('sort_order') ?? -1;
             foreach ($files as $index => $file) {
                 $path = $file->store('products', 'public');
-                \App\Models\ProductImage::create([
+                ProductImage::create([
                     'product_id' => $product->id,
                     'image_path' => $path,
                     'sort_order' => $maxOrder + $index + 1,
@@ -264,15 +277,15 @@ class ProductController extends Controller
         }
 
         // Enregistrer l'activité
-        \App\Models\ActivityLog::create([
-            'user_id' => \Illuminate\Support\Facades\Auth::id(),
+        ActivityLog::create([
+            'user_id' => Auth::id(),
             'action' => 'PRODUCT_UPDATE',
-            'description' => "Modification du produit '{$product->name}' (Nouveau Stock: {$product->quantity}, Nouveau Prix: {$product->price} Dhs)"
+            'description' => "Modification du produit '{$product->name}' (Nouveau Stock: {$product->quantity}, Nouveau Prix: {$product->price} Dhs)",
         ]);
 
         return response()->json([
             'message' => 'Produit mis à jour avec succès',
-            'product' => $product->load('images')
+            'product' => $product->load('images'),
         ]);
     }
 
@@ -282,7 +295,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
-        
+
         // Supprimer l'image principale
         if ($product->image) {
             Storage::disk('public')->delete($product->image);
@@ -296,14 +309,14 @@ class ProductController extends Controller
         $product->delete();
 
         // Enregistrer l'activité
-        \App\Models\ActivityLog::create([
-            'user_id' => \Illuminate\Support\Facades\Auth::id(),
+        ActivityLog::create([
+            'user_id' => Auth::id(),
             'action' => 'PRODUCT_DELETE',
-            'description' => "Suppression définitive du produit '{$productName}'"
+            'description' => "Suppression définitive du produit '{$productName}'",
         ]);
 
         return response()->json([
-            'message' => 'Produit supprimé avec succès'
+            'message' => 'Produit supprimé avec succès',
         ]);
     }
 
@@ -312,17 +325,17 @@ class ProductController extends Controller
      */
     public function deleteGalleryImage($id)
     {
-        $image = \App\Models\ProductImage::findOrFail($id);
-        
+        $image = ProductImage::findOrFail($id);
+
         // Supprimer le fichier physique
         if (Storage::disk('public')->exists($image->image_path)) {
             Storage::disk('public')->delete($image->image_path);
         }
-        
+
         $image->delete();
 
         return response()->json([
-            'message' => 'Image de galerie supprimée avec succès'
+            'message' => 'Image de galerie supprimée avec succès',
         ]);
     }
 
@@ -332,10 +345,10 @@ class ProductController extends Controller
     public function updateGalleryImage(Request $request, $id)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $image = \App\Models\ProductImage::findOrFail($id);
+        $image = ProductImage::findOrFail($id);
 
         // Supprimer l'ancien fichier
         if (Storage::disk('public')->exists($image->image_path)) {
@@ -345,12 +358,12 @@ class ProductController extends Controller
         // Sauvegarder la nouvelle image
         $path = $request->file('image')->store('products', 'public');
         $image->update([
-            'image_path' => $path
+            'image_path' => $path,
         ]);
 
         return response()->json([
             'message' => 'Image mise à jour avec succès',
-            'image' => $image
+            'image' => $image,
         ]);
     }
 }

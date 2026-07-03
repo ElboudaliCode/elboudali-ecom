@@ -18,7 +18,7 @@ class ReviewController extends Controller
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-        Product::findOrFail($productId);
+        Product::where('is_active', true)->findOrFail($productId);
 
         $exists = Review::where('user_id', Auth::id())
             ->where('product_id', $productId)

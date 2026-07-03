@@ -15,8 +15,12 @@ class CartController extends Controller
     public function index(Request $request)
     {
         $cart = Cart::firstOrCreate(['user_id' => $request->user()->id]);
-        $cart->load('items.product:id,name,price,image,quantity'); // On charge les infos produit
-        
+        $items = $cart->items()
+            ->whereHas('product', fn ($query) => $query->where('is_active', true))
+            ->with('product:id,name,price,image,quantity,is_active')
+            ->get();
+        $cart->setRelation('items', $items);
+
         return response()->json($cart);
     }
 
@@ -27,11 +31,11 @@ class CartController extends Controller
     {
         $validated = $request->validate([
             'product_id' => 'required|exists:products,id',
-            'quantity' => 'required|integer|min:1'
+            'quantity' => 'required|integer|min:1',
         ]);
 
-        $product = Product::findOrFail($validated['product_id']);
-        
+        $product = Product::where('is_active', true)->findOrFail($validated['product_id']);
+
         // Vérification des stocks
         if ($product->quantity < $validated['quantity']) {
             return response()->json(['error' => 'Stock insuffisant.'], 400);
@@ -41,8 +45,8 @@ class CartController extends Controller
 
         // Vérifier si le produit est déjà dans le panier
         $cartItem = CartItem::where('cart_id', $cart->id)
-                            ->where('product_id', $validated['product_id'])
-                            ->first();
+            ->where('product_id', $validated['product_id'])
+            ->first();
 
         if ($cartItem) {
             // Mettre à jour la quantité si le stock le permet
@@ -69,14 +73,18 @@ class CartController extends Controller
     public function update(Request $request, $itemId)
     {
         $validated = $request->validate([
-            'quantity' => 'required|integer|min:1'
+            'quantity' => 'required|integer|min:1',
         ]);
 
-        $cartItem = CartItem::whereHas('cart', function($q) use ($request) {
+        $cartItem = CartItem::whereHas('cart', function ($q) use ($request) {
             $q->where('user_id', $request->user()->id);
         })->findOrFail($itemId);
 
         // Vérifier le stock
+        if (! $cartItem->product?->is_active) {
+            return response()->json(['error' => 'Ce produit n est plus disponible.'], 422);
+        }
+
         if ($cartItem->product->quantity < $validated['quantity']) {
             return response()->json(['error' => 'Stock insuffisant.'], 400);
         }
@@ -91,7 +99,7 @@ class CartController extends Controller
      */
     public function remove(Request $request, $itemId)
     {
-        $cartItem = CartItem::whereHas('cart', function($q) use ($request) {
+        $cartItem = CartItem::whereHas('cart', function ($q) use ($request) {
             $q->where('user_id', $request->user()->id);
         })->findOrFail($itemId);
 

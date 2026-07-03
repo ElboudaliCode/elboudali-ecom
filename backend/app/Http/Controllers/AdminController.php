@@ -37,6 +37,7 @@ class AdminController extends Controller
 
         $lowStockProducts = $this->safeStat(fn () => Product::with('category')
             ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
+            ->where('products.is_active', true)
             ->whereColumn('products.quantity', '<=', 'categories.seuil_alerte')
             ->select('products.*')
             ->orderBy('products.quantity')
@@ -107,6 +108,7 @@ class AdminController extends Controller
             return $callback();
         } catch (\Throwable $exception) {
             report($exception);
+
             return $default;
         }
     }
@@ -138,6 +140,7 @@ class AdminController extends Controller
     public function usersList()
     {
         $users = User::orderByDesc('created_at')->get();
+
         return response()->json($users);
     }
 
@@ -216,7 +219,7 @@ class AdminController extends Controller
      */
     public function exportProductsCsv()
     {
-        $products = Product::with('category')->orderBy('name')->get();
+        $products = Product::with('category')->where('is_active', true)->orderBy('name')->get();
 
         $csv = "ID,Nom,Categorie,Prix,Quantite,Description\n";
         foreach ($products as $product) {

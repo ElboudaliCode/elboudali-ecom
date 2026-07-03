@@ -4,7 +4,7 @@ Modern e-commerce web application built with Laravel 12 and React/Vite.
 
 ## Features
 
-- Product catalog with categories, search, filters, promotions and stock badges.
+- Demo catalog with 784 active products, matched galleries, categories, search, filters, promotions and stock badges.
 - Product details with gallery, similar products and customer reviews.
 - Cart, checkout, addresses, payment method and order history.
 - Admin dashboard with revenue, orders, customers and exports.
@@ -27,7 +27,7 @@ Modern e-commerce web application built with Laravel 12 and React/Vite.
 
 ## Demo Accounts
 
-After running the seeders:
+Set `SEED_DEMO_DATA=true` before running the seeders to create these accounts:
 
 - Admin: `admin@demo.com` / `Password123`
 - Supervisor: `superviseur@demo.com` / `Password123`
@@ -65,6 +65,12 @@ Default URLs:
 ## Production Setup
 
 See [README_PRODUCTION.md](README_PRODUCTION.md) for deployment configuration and delivery checklist.
+
+## Demo Catalog
+
+The bundled snapshot contains 194 source products expanded into 776 tracked SKU offers, plus 8 curated products. Run `php artisan catalog:audit` after an import to verify the minimum product count, SKUs, prices and images.
+
+The snapshot is prototype data from [DummyJSON](https://dummyjson.com/docs/products). Before operating a real store, replace demo titles, prices and images with the merchant's supplier catalog and licensed media.
 
 ## Sales Pack
 

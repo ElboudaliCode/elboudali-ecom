@@ -23,11 +23,45 @@ use App\Models\ReviewImage;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        $electronics = $this->category('Electronique', 'Smartphones, ordinateurs et accessoires premium.', 5);
+        $phones = $this->category('Telephones', 'Smartphones et accessoires mobiles.', 8, $electronics->id);
+        $computers = $this->category('Ordinateurs', 'PC portables et materiel professionnel.', 4, $electronics->id);
+        $accessories = $this->category('Accessoires', 'Casques, montres et gadgets connectes.', 6, $electronics->id);
+        $photo = $this->category('Photo & Video', 'Appareils photo et equipements createurs.', 3);
+        $fashion = $this->category('Mode', 'Selection textile et lifestyle.', 10);
+
+        $products = collect([
+            $this->product('iPhone 15 Pro Max', $phones->id, 12500, 13400, 9, true, 'Smartphone Apple avec ecran Super Retina, puce A17 Pro et appareil photo 48MP.', 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=900&q=80'),
+            $this->product('Samsung Galaxy S24 Ultra', $phones->id, 10999, 11999, 6, true, 'Smartphone premium avec S-Pen, ecran AMOLED et appareil photo 200MP.', 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=900&q=80'),
+            $this->product('MacBook Pro M3 14', $computers->id, 18500, null, 3, false, 'Ordinateur portable professionnel pour developpeurs, designers et createurs.', 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80'),
+            $this->product('HP Pavilion 15', $computers->id, 6500, 7200, 5, true, 'PC portable polyvalent pour etudes, bureautique et travail quotidien.', 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80'),
+            $this->product('Casque Sony WH-1000XM5', $accessories->id, 2990, null, 18, false, 'Casque sans fil avec reduction de bruit active et autonomie longue duree.', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80'),
+            $this->product('Apple Watch Series 9', $accessories->id, 4200, 4700, 4, true, 'Montre connectee avec suivi sante, GPS et ecran Always-On.', 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&w=900&q=80'),
+            $this->product('Canon EOS R6 Mark II', $photo->id, 22000, null, 2, false, 'Appareil photo hybride plein format pour photo, video et production pro.', 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80'),
+            $this->product('Sac Urbain Premium', $fashion->id, 420, 520, 25, true, 'Sac quotidien resistant avec design minimaliste et compartiment laptop.', 'https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=900&q=80'),
+        ]);
+
+        $products->each(function (Product $product) {
+            ProductImage::updateOrCreate(
+                ['product_id' => $product->id, 'sort_order' => 0],
+                ['image_path' => $product->image]
+            );
+            $product->images()->where('sort_order', '>', 0)->delete();
+        });
+
+        $this->retireLegacyCatalog($electronics, $phones, $computers, $accessories, $photo, $fashion);
+        $this->call(CatalogSeeder::class);
+
+        if (! config('app.seed_demo_data')) {
+            return;
+        }
+
         $admin = User::updateOrCreate(
             ['email' => 'admin@demo.com'],
             ['name' => 'Administrateur Demo', 'password' => Hash::make('Password123'), 'role' => 'admin', 'loyalty_points' => 0]
@@ -47,39 +81,6 @@ class DatabaseSeeder extends Seeder
             ['email' => 'noura@demo.com'],
             ['name' => 'Noura Benali', 'password' => Hash::make('Password123'), 'role' => 'client', 'loyalty_points' => 45]
         );
-
-        $electronics = $this->category('Electronique', 'Smartphones, ordinateurs et accessoires premium.', 5);
-        $phones = $this->category('Telephones', 'Smartphones et accessoires mobiles.', 8, $electronics->id);
-        $computers = $this->category('Ordinateurs', 'PC portables et materiel professionnel.', 4, $electronics->id);
-        $accessories = $this->category('Accessoires', 'Casques, montres et gadgets connectes.', 6, $electronics->id);
-        $photo = $this->category('Photo & Video', 'Appareils photo et equipements createurs.', 3);
-        $fashion = $this->category('Mode', 'Selection textile et lifestyle.', 10);
-
-        $products = collect([
-            $this->product('iPhone 15 Pro Max', $phones->id, 12500, 13400, 9, true, 'Smartphone Apple avec ecran Super Retina, puce A17 Pro et appareil photo 48MP.', 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=900&q=80'),
-            $this->product('Samsung Galaxy S24 Ultra', $phones->id, 10999, 11999, 6, true, 'Smartphone premium avec S-Pen, ecran AMOLED et appareil photo 200MP.', 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=900&q=80'),
-            $this->product('MacBook Pro M3 14', $computers->id, 18500, null, 3, false, 'Ordinateur portable professionnel pour developpeurs, designers et createurs.', 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80'),
-            $this->product('HP Pavilion 15', $computers->id, 6500, 7200, 5, true, 'PC portable polyvalent pour etudes, bureautique et travail quotidien.', 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80'),
-            $this->product('Casque Sony WH-1000XM5', $accessories->id, 2990, null, 18, false, 'Casque sans fil avec reduction de bruit active et autonomie longue duree.', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80'),
-            $this->product('Apple Watch Series 9', $accessories->id, 4200, 4700, 4, true, 'Montre connectee avec suivi sante, GPS et ecran Always-On.', 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&w=900&q=80'),
-            $this->product('Canon EOS R6 Mark II', $photo->id, 22000, null, 2, false, 'Appareil photo hybride plein format pour photo, video et production pro.', 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80'),
-            $this->product('Sac Urbain Premium', $fashion->id, 420, 520, 25, true, 'Sac quotidien resistant avec design minimaliste et compartiment laptop.', 'https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=900&q=80'),
-        ]);
-
-        $products->each(function (Product $product, int $index) use ($products) {
-            ProductImage::updateOrCreate(
-                ['product_id' => $product->id, 'sort_order' => 0],
-                ['image_path' => $product->image]
-            );
-
-            $alternate = $products->get(($index + 1) % $products->count());
-            ProductImage::updateOrCreate(
-                ['product_id' => $product->id, 'sort_order' => 1],
-                ['image_path' => $alternate->image]
-            );
-        });
-
-        $this->seedLargeCatalog($electronics, $phones, $computers, $accessories, $photo, $fashion);
 
         Coupon::updateOrCreate(['code' => 'WELCOME10'], [
             'type' => 'percentage',
@@ -214,7 +215,7 @@ class DatabaseSeeder extends Seeder
         );
     }
 
-    private function seedLargeCatalog(Category $electronics, Category $phones, Category $computers, Category $accessories, Category $photo, Category $fashion): void
+    private function retireLegacyCatalog(Category $electronics, Category $phones, Category $computers, Category $accessories, Category $photo, Category $fashion): void
     {
         $audio = $this->category('Audio', 'Casques, ecouteurs et enceintes.', 8, $electronics->id);
         $wearables = $this->category('Montres Connectees', 'Smartwatches et bracelets connectes.', 7, $electronics->id);
@@ -384,7 +385,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 130) as $i) {
             $line = $accessoryLines[($i - 1) % count($accessoryLines)];
             $price = $this->catalogPrice($line[2][0], $line[2][1], $i + 400, 10);
-            $catalog[] = [$line[0], "{$line[1]} Serie " . str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 10 + ($i % 80), $line[3], "{$line[1]} avec finition propre, stock controle et bon rapport qualite-prix."];
+            $catalog[] = [$line[0], "{$line[1]} Serie ".str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 10 + ($i % 80), $line[3], "{$line[1]} avec finition propre, stock controle et bon rapport qualite-prix."];
         }
 
         $cameraLines = [
@@ -398,7 +399,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 55) as $i) {
             $line = $cameraLines[($i - 1) % count($cameraLines)];
             $price = $this->catalogPrice($line[2][0], $line[2][1], $i + 600, 100);
-            $catalog[] = [$photo->id, "{$line[0]} {$line[1]} Kit Photo " . str_pad((string) $i, 2, '0', STR_PAD_LEFT), $price, 1 + ($i % 12), 'camera', "Pack photo {$line[0]} adapte aux createurs, videos, portraits et voyages."];
+            $catalog[] = [$photo->id, "{$line[0]} {$line[1]} Kit Photo ".str_pad((string) $i, 2, '0', STR_PAD_LEFT), $price, 1 + ($i % 12), 'camera', "Pack photo {$line[0]} adapte aux createurs, videos, portraits et voyages."];
         }
 
         $fashionLines = [
@@ -415,7 +416,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 150) as $i) {
             $line = $fashionLines[($i - 1) % count($fashionLines)];
             $price = $this->catalogPrice($line[2][0], $line[2][1], $i + 800, 10);
-            $catalog[] = [$line[0], "{$line[1]} {$sizes[$i % count($sizes)]} Ref " . str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 6 + ($i % 60), $line[3], "{$line[1]} avec coupe moderne, matiere confortable et selection boutique."];
+            $catalog[] = [$line[0], "{$line[1]} {$sizes[$i % count($sizes)]} Ref ".str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 6 + ($i % 60), $line[3], "{$line[1]} avec coupe moderne, matiere confortable et selection boutique."];
         }
 
         $homeLines = [
@@ -429,7 +430,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 80) as $i) {
             $line = $homeLines[($i - 1) % count($homeLines)];
             $price = $this->catalogPrice($line[1][0], $line[1][1], $i + 1000, 10);
-            $catalog[] = [$home->id, "{$line[0]} Edition " . str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 5 + ($i % 45), 'home', "{$line[0]} pratique pour maison moderne, usage quotidien et rangement facile."];
+            $catalog[] = [$home->id, "{$line[0]} Edition ".str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 5 + ($i % 45), 'home', "{$line[0]} pratique pour maison moderne, usage quotidien et rangement facile."];
         }
 
         $beautyLines = [
@@ -442,7 +443,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 50) as $i) {
             $line = $beautyLines[($i - 1) % count($beautyLines)];
             $price = $this->catalogPrice($line[1][0], $line[1][1], $i + 1200, 10);
-            $catalog[] = [$beauty->id, "{$line[0]} Ref " . str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 8 + ($i % 35), 'beauty', "{$line[0]} selectionne pour une routine simple, propre et efficace."];
+            $catalog[] = [$beauty->id, "{$line[0]} Ref ".str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 8 + ($i % 35), 'beauty', "{$line[0]} selectionne pour une routine simple, propre et efficace."];
         }
 
         $sportLines = [
@@ -456,7 +457,7 @@ class DatabaseSeeder extends Seeder
             $line = $sportLines[($i - 1) % count($sportLines)];
             $price = $this->catalogPrice($line[1][0], $line[1][1], $i + 1400, 10);
             $family = str_contains($line[0], 'Chaussures') ? 'shoes' : 'sport';
-            $catalog[] = [$sport->id, "{$line[0]} Serie " . str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 4 + ($i % 40), $family, "{$line[0]} adapte au sport quotidien, fitness et usage outdoor."];
+            $catalog[] = [$sport->id, "{$line[0]} Serie ".str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 4 + ($i % 40), $family, "{$line[0]} adapte au sport quotidien, fitness et usage outdoor."];
         }
 
         $officeLines = [
@@ -468,7 +469,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 40) as $i) {
             $line = $officeLines[($i - 1) % count($officeLines)];
             $price = $this->catalogPrice($line[1][0], $line[1][1], $i + 1600, 10);
-            $catalog[] = [$office->id, "{$line[0]} Ref " . str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 3 + ($i % 25), $line[2], "{$line[0]} pour bureau, teletravail et espace professionnel."];
+            $catalog[] = [$office->id, "{$line[0]} Ref ".str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 3 + ($i % 25), $line[2], "{$line[0]} pour bureau, teletravail et espace professionnel."];
         }
 
         $gamingLines = [
@@ -482,21 +483,20 @@ class DatabaseSeeder extends Seeder
             $line = $gamingLines[($i - 1) % count($gamingLines)];
             $price = $this->catalogPrice($line[1][0], $line[1][1], $i + 1800, 10);
             $family = str_contains($line[0], 'Casque') ? 'audio' : 'gaming';
-            $catalog[] = [$gaming->id, "{$line[0]} G-" . str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 4 + ($i % 35), $family, "{$line[0]} concu pour setup gaming, confort et performance."];
+            $catalog[] = [$gaming->id, "{$line[0]} G-".str_pad((string) $i, 3, '0', STR_PAD_LEFT), $price, 4 + ($i % 35), $family, "{$line[0]} concu pour setup gaming, confort et performance."];
         }
 
-        foreach ($catalog as $index => $item) {
-            [$categoryId, $name, $price, $quantity, $family, $description] = $item;
-            $isPromo = $index % 5 === 0;
-            $oldPrice = $isPromo ? $this->roundedPrice($price * (1.10 + (($index % 4) * 0.03)), 10) : null;
-            $familyImages = $images[$family] ?? $images['home'];
-            $image = $this->imageFor($familyImages, $index);
+        $legacyImages = collect($images)->flatten()->unique()->values()->all();
 
-            $product = $this->product($name, $categoryId, $price, $oldPrice, $quantity, $isPromo, $description, $image);
-            $this->syncProductGallery($product, $familyImages, $index);
+        foreach (array_chunk(array_column($catalog, 1), 200) as $legacyNames) {
+            Product::whereNull('catalog_source')
+                ->whereIn('name', $legacyNames)
+                ->whereIn('image', $legacyImages)
+                ->update([
+                    'catalog_source' => 'legacy-demo',
+                    'is_active' => false,
+                ]);
         }
-
-        $this->normalizePremiumPhones($images);
     }
 
     private function category(string $name, string $description, int $threshold, ?int $parentId = null): Category
@@ -512,6 +512,11 @@ class DatabaseSeeder extends Seeder
         return Product::updateOrCreate(
             ['name' => $name],
             [
+                'sku' => 'CUR-'.strtoupper(Str::slug($name, '-')),
+                'brand' => Str::before($name, ' '),
+                'catalog_source' => 'curated',
+                'catalog_key' => 'curated:'.Str::slug($name),
+                'is_active' => true,
                 'description' => $description,
                 'price' => $price,
                 'old_price' => $oldPrice,
@@ -527,6 +532,7 @@ class DatabaseSeeder extends Seeder
     {
         $span = max($max - $min, $round);
         $raw = $min + (($seed * 137 + 53) % $span);
+
         return $this->roundedPrice($raw, $round);
     }
 
@@ -535,59 +541,9 @@ class DatabaseSeeder extends Seeder
         return (float) max($round, round($value / $round) * $round);
     }
 
-    private function imageFor(array $images, int $seed): string
-    {
-        return $images[$seed % count($images)];
-    }
-
-    private function syncProductGallery(Product $product, array $images, int $seed): void
-    {
-        foreach (range(0, min(2, count($images) - 1)) as $offset) {
-            ProductImage::updateOrCreate(
-                ['product_id' => $product->id, 'sort_order' => $offset],
-                ['image_path' => $this->imageFor($images, $seed + $offset)]
-            );
-        }
-    }
-
-    private function normalizePremiumPhones(array $images): void
-    {
-        $rules = [
-            ['prefix' => 'Apple iPhone 15 Pro', 'min' => 10900, 'max' => 16500, 'family' => 'apple_phone'],
-            ['prefix' => 'Apple iPhone 16', 'min' => 11200, 'max' => 18000, 'family' => 'apple_phone'],
-            ['prefix' => 'Apple iPhone 15', 'min' => 8200, 'max' => 12500, 'family' => 'apple_phone', 'exclude' => 'Apple iPhone 15 Pro'],
-            ['prefix' => 'Samsung Galaxy S24', 'min' => 8200, 'max' => 13000, 'family' => 'android_phone'],
-            ['prefix' => 'Samsung Galaxy Z Flip', 'min' => 9400, 'max' => 15500, 'family' => 'android_phone'],
-            ['prefix' => 'Samsung Galaxy S23', 'min' => 6800, 'max' => 10400, 'family' => 'android_phone'],
-        ];
-
-        foreach ($rules as $ruleIndex => $rule) {
-            $query = Product::where('name', 'like', $rule['prefix'] . '%');
-            if (isset($rule['exclude'])) {
-                $query->where('name', 'not like', $rule['exclude'] . '%');
-            }
-
-            $query->get()->each(function (Product $product, int $index) use ($rule, $ruleIndex, $images) {
-                $familyImages = $images[$rule['family']];
-                $price = (float) $product->price;
-                if ($price < $rule['min'] || $price > $rule['max']) {
-                    $price = $this->catalogPrice($rule['min'], $rule['max'], $ruleIndex * 100 + $index, 50);
-                }
-
-                $product->update([
-                    'price' => $price,
-                    'old_price' => $product->is_promo ? $this->roundedPrice($price * 1.12, 50) : null,
-                    'image' => $this->imageFor($familyImages, $index),
-                ]);
-
-                $this->syncProductGallery($product, $familyImages, $index);
-            });
-        }
-    }
-
     private function seedDemoOrders(User $client, User $secondClient, Address $address, Address $secondAddress): void
     {
-        $products = Product::orderBy('id')->take(90)->get();
+        $products = Product::where('is_active', true)->orderBy('id')->take(90)->get();
         if ($products->count() < 10) {
             return;
         }
@@ -620,7 +576,7 @@ class DatabaseSeeder extends Seeder
                 ];
             }
 
-            $tracking = 'TRK-DEMO-' . str_pad((string) (2000 + $i), 4, '0', STR_PAD_LEFT);
+            $tracking = 'TRK-DEMO-'.str_pad((string) (2000 + $i), 4, '0', STR_PAD_LEFT);
             $totalAmount = $itemsTotal + $deliveryFee;
 
             $order = Order::updateOrCreate(
@@ -658,7 +614,7 @@ class DatabaseSeeder extends Seeder
             Payment::updateOrCreate(
                 ['order_id' => $order->id],
                 [
-                    'transaction_id' => 'PAY-' . $tracking,
+                    'transaction_id' => 'PAY-'.$tracking,
                     'payment_method' => $paymentMethods[$i % count($paymentMethods)],
                     'amount' => $totalAmount,
                     'status' => in_array($status, $paidStatuses, true) ? 'completed' : ($status === 'cancelled' ? 'failed' : 'pending'),

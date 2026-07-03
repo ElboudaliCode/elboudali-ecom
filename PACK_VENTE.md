@@ -25,7 +25,7 @@ Comptes demo:
 
 ## Fonctionnalites vendables
 
-- Catalogue produits avec categories, images, badges, promotions et filtres avances.
+- Catalogue de demonstration avec 784 produits actifs, galeries coherentes, categories, badges, promotions et filtres avances.
 - Panier, checkout, adresse, paiement a la livraison securise et suivi commande.
 - Back-office admin avec statistiques, gestion produits, categories, commandes et exports.
 - Gestion livraison avec statut, frais, date estimee et tracking.
@@ -86,6 +86,7 @@ Le prix depend surtout de:
 ## Checklist avant remise client
 
 - Remplacer le nom, logo, couleurs et images selon le client.
+- Remplacer le catalogue de demonstration par les references, prix, stocks et images autorisees du fournisseur du client.
 - Creer une base propre avec `php artisan migrate --force` et importer uniquement les donnees du client.
 - Changer tous les comptes demo.
 - Mettre `APP_ENV=production` et `APP_DEBUG=false`.

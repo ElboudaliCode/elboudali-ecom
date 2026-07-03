@@ -73,6 +73,7 @@ PAYMENT_PAYPAL_ENABLED=false
 ```
 
 `SEED_DEMO_DATA=false` evite de recreer ou de reinitialiser les comptes demo a chaque deploiement.
+Le catalogue de demonstration reste synchronise; seuls les utilisateurs, commandes, avis et conversations de demo sont desactives par ce drapeau.
 
 ## 3. Configuration Vercel
 
@@ -89,6 +90,17 @@ VITE_STORE_ADDRESS="Adresse complete"
 VITE_STORE_ICE=
 VITE_STORE_RC=
 ```
+
+## Catalogue de demonstration
+
+Le seeder synchronise 776 SKU issus d un snapshot local de 194 produits, puis conserve 8 produits selectionnes, soit 784 produits actifs. Les variantes d un meme produit partagent uniquement sa propre galerie.
+
+```bash
+php artisan db:seed --class=DatabaseSeeder --force
+php artisan catalog:audit
+```
+
+Le catalogue est destine a la demonstration et au prototypage. Avant ouverture commerciale, importer les references, prix, stocks et medias autorises du fournisseur du marchand. Les produits ajoutes manuellement dans l administration ne sont pas desactives par la synchronisation.
 
 ## 4. Email SMTP Gmail
 

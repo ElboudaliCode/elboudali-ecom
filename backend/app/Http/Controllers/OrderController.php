@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActivityLog;
 use App\Models\Address;
 use App\Models\Cart;
 use App\Models\Coupon;
@@ -33,7 +34,7 @@ class OrderController extends Controller
             ], 503);
         }
 
-        if (!config('store.payments.cod_enabled')) {
+        if (! config('store.payments.cod_enabled')) {
             return response()->json([
                 'error' => 'Aucun moyen de paiement n est disponible actuellement.',
             ], 503);
@@ -42,7 +43,7 @@ class OrderController extends Controller
         $user = $request->user();
         $cart = Cart::with('items.product')->where('user_id', $user->id)->first();
 
-        if (!$cart || $cart->items->count() === 0) {
+        if (! $cart || $cart->items->count() === 0) {
             return response()->json(['error' => 'Votre panier est vide.'], 400);
         }
 
@@ -58,7 +59,7 @@ class OrderController extends Controller
 
         $discount = 0;
         $coupon = null;
-        if (!empty($validated['coupon_code'])) {
+        if (! empty($validated['coupon_code'])) {
             $coupon = Coupon::where('code', $validated['coupon_code'])->first();
             if ($coupon && $coupon->isValid()) {
                 $discount = $coupon->type === 'percentage'
@@ -71,7 +72,7 @@ class OrderController extends Controller
         $loyaltyPointsUsed = 0;
         $loyaltyDiscount = 0;
 
-        if (!empty($validated['use_loyalty_points'])) {
+        if (! empty($validated['use_loyalty_points'])) {
             $availableDiscount = floor(($user->loyalty_points ?? 0) / 100) * 10;
             $loyaltyDiscount = min($availableDiscount, $totalAfterCoupon);
             $loyaltyPointsUsed = (int) floor($loyaltyDiscount / 10) * 100;
@@ -107,11 +108,14 @@ class OrderController extends Controller
                 'delivery_method' => $deliveryMethod,
                 'delivery_fee' => $deliveryFee,
                 'estimated_delivery_date' => $estimatedDeliveryDate,
-                'tracking_number' => 'TRK-' . strtoupper(uniqid()),
+                'tracking_number' => 'TRK-'.strtoupper(uniqid()),
             ]);
 
             foreach ($cart->items as $item) {
-                $lockedProduct = Product::whereKey($item->product_id)->lockForUpdate()->firstOrFail();
+                $lockedProduct = Product::whereKey($item->product_id)
+                    ->where('is_active', true)
+                    ->lockForUpdate()
+                    ->firstOrFail();
 
                 if ($lockedProduct->quantity < $item->quantity) {
                     throw new \RuntimeException("Stock insuffisant pour le produit : {$lockedProduct->name}");
@@ -130,7 +134,7 @@ class OrderController extends Controller
 
             Payment::create([
                 'order_id' => $order->id,
-                'transaction_id' => 'COD-' . strtoupper(uniqid()),
+                'transaction_id' => 'COD-'.strtoupper(uniqid()),
                 'payment_method' => $validated['payment_method'],
                 'amount' => $totalAmount,
                 'status' => 'pending',
@@ -162,7 +166,7 @@ class OrderController extends Controller
 
             NotificationController::createNotification(
                 null,
-                "Nouvelle commande #{$order->id} d'un montant de " . number_format($totalAmount, 2) . " Dhs recue.",
+                "Nouvelle commande #{$order->id} d'un montant de ".number_format($totalAmount, 2).' Dhs recue.',
                 'info'
             );
 
@@ -284,8 +288,8 @@ class OrderController extends Controller
             $request->status === 'cancelled' ? 'danger' : ($request->status === 'delivered' ? 'success' : 'info')
         );
 
-        if (class_exists(\App\Models\ActivityLog::class)) {
-            \App\Models\ActivityLog::create([
+        if (class_exists(ActivityLog::class)) {
+            ActivityLog::create([
                 'user_id' => $request->user()->id,
                 'action' => 'ORDER_STATUS_UPDATE',
                 'description' => "Commande #{$order->id} mise a jour vers {$request->status}",
@@ -309,7 +313,8 @@ class OrderController extends Controller
         $rows = $order->items->map(function ($item) {
             $lineTotal = number_format($item->unit_price * $item->quantity, 2);
             $productName = e($item->product_name);
-            return "<tr><td>{$productName}</td><td>{$item->quantity}</td><td>" . number_format($item->unit_price, 2) . " Dhs</td><td>{$lineTotal} Dhs</td></tr>";
+
+            return "<tr><td>{$productName}</td><td>{$item->quantity}</td><td>".number_format($item->unit_price, 2)." Dhs</td><td>{$lineTotal} Dhs</td></tr>";
         })->implode('');
 
         $storeName = e((string) config('store.name'));
@@ -333,7 +338,7 @@ class OrderController extends Controller
         <div class='head'><div><h1>{$storeName}</h1><p class='muted'>Facture officielle - {$storeEmail}</p></div><div><strong>Facture #FAC-{$order->id}</strong><br>Date: {$order->created_at->format('d/m/Y H:i')}</div></div>
         <p><strong>Client:</strong> {$clientName}<br><strong>Email:</strong> {$clientEmail}<br><strong>Livraison:</strong> {$deliveryMethod} - {$order->delivery_fee} Dhs<br><strong>Tracking:</strong> {$trackingNumber}</p>
         <table><thead><tr><th>Produit</th><th>Qte</th><th>Prix</th><th>Total</th></tr></thead><tbody>{$rows}</tbody></table>
-        <div class='total'>Total TTC: " . number_format($order->total_amount, 2) . " Dhs</div>
+        <div class='total'>Total TTC: ".number_format($order->total_amount, 2)." Dhs</div>
         <button class='print' onclick='window.print()'>Imprimer / Enregistrer PDF</button>
         </body></html>";
 

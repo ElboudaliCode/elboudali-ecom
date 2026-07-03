@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,6 +12,7 @@ class FavoriteController extends Controller
     public function index()
     {
         $favorites = Favorite::where('user_id', Auth::id())
+            ->whereHas('product', fn ($query) => $query->where('is_active', true))
             ->with('product.category')
             ->get();
 
@@ -23,6 +25,8 @@ class FavoriteController extends Controller
             'product_id' => 'required|exists:products,id',
             'note' => 'nullable|string|max:1000',
         ]);
+
+        Product::where('is_active', true)->findOrFail($request->product_id);
 
         $favorite = Favorite::firstOrCreate(
             [
@@ -64,7 +68,7 @@ class FavoriteController extends Controller
             ->where('product_id', $productId)
             ->first();
 
-        if (!$favorite) {
+        if (! $favorite) {
             return response()->json(['message' => 'Favori introuvable.'], 404);
         }
 

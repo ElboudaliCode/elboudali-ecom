@@ -1,0 +1,3003 @@
+{
+    "source":  "https://dummyjson.com/products?limit=0",
+    "source_license":  "MIT",
+    "fetched_at":  "2026-06-27T23:47:37Z",
+    "products":  [
+                     {
+                         "id":  1,
+                         "title":  "Essence Mascara Lash Princess",
+                         "category":  "beauty",
+                         "price":  9.99,
+                         "discountPercentage":  10.48,
+                         "stock":  99,
+                         "brand":  "Essence",
+                         "sku":  "BEA-ESS-ESS-001",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  2,
+                         "title":  "Eyeshadow Palette with Mirror",
+                         "category":  "beauty",
+                         "price":  19.99,
+                         "discountPercentage":  18.19,
+                         "stock":  34,
+                         "brand":  "Glamour Beauty",
+                         "sku":  "BEA-GLA-EYE-002",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  3,
+                         "title":  "Powder Canister",
+                         "category":  "beauty",
+                         "price":  14.99,
+                         "discountPercentage":  9.84,
+                         "stock":  89,
+                         "brand":  "Velvet Touch",
+                         "sku":  "BEA-VEL-POW-003",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/beauty/powder-canister/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  4,
+                         "title":  "Red Lipstick",
+                         "category":  "beauty",
+                         "price":  12.99,
+                         "discountPercentage":  12.16,
+                         "stock":  91,
+                         "brand":  "Chic Cosmetics",
+                         "sku":  "BEA-CHI-LIP-004",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  5,
+                         "title":  "Red Nail Polish",
+                         "category":  "beauty",
+                         "price":  8.99,
+                         "discountPercentage":  11.44,
+                         "stock":  79,
+                         "brand":  "Nail Couture",
+                         "sku":  "BEA-NAI-NAI-005",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  6,
+                         "title":  "Calvin Klein CK One",
+                         "category":  "fragrances",
+                         "price":  49.99,
+                         "discountPercentage":  1.89,
+                         "stock":  29,
+                         "brand":  "Calvin Klein",
+                         "sku":  "FRA-CAL-CAL-006",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  7,
+                         "title":  "Chanel Coco Noir Eau De",
+                         "category":  "fragrances",
+                         "price":  129.99,
+                         "discountPercentage":  16.51,
+                         "stock":  58,
+                         "brand":  "Chanel",
+                         "sku":  "FRA-CHA-CHA-007",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  8,
+                         "title":  "Dior J\u0027adore",
+                         "category":  "fragrances",
+                         "price":  89.99,
+                         "discountPercentage":  14.72,
+                         "stock":  98,
+                         "brand":  "Dior",
+                         "sku":  "FRA-DIO-DIO-008",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/fragrances/dior-j\u0027adore/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/fragrances/dior-j\u0027adore/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/dior-j\u0027adore/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/dior-j\u0027adore/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  9,
+                         "title":  "Dolce Shine Eau de",
+                         "category":  "fragrances",
+                         "price":  69.99,
+                         "discountPercentage":  0.62,
+                         "stock":  4,
+                         "brand":  "Dolce \u0026 Gabbana",
+                         "sku":  "FRA-DOL-DOL-009",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  10,
+                         "title":  "Gucci Bloom Eau de",
+                         "category":  "fragrances",
+                         "price":  79.99,
+                         "discountPercentage":  14.39,
+                         "stock":  91,
+                         "brand":  "Gucci",
+                         "sku":  "FRA-GUC-GUC-010",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  11,
+                         "title":  "Annibale Colombo Bed",
+                         "category":  "furniture",
+                         "price":  1899.99,
+                         "discountPercentage":  8.57,
+                         "stock":  88,
+                         "brand":  "Annibale Colombo",
+                         "sku":  "FUR-ANN-ANN-011",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  12,
+                         "title":  "Annibale Colombo Sofa",
+                         "category":  "furniture",
+                         "price":  2499.99,
+                         "discountPercentage":  14.4,
+                         "stock":  60,
+                         "brand":  "Annibale Colombo",
+                         "sku":  "FUR-ANN-ANN-012",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  13,
+                         "title":  "Bedside Table African Cherry",
+                         "category":  "furniture",
+                         "price":  299.99,
+                         "discountPercentage":  19.09,
+                         "stock":  64,
+                         "brand":  "Furniture Co.",
+                         "sku":  "FUR-FUR-BED-013",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  14,
+                         "title":  "Knoll Saarinen Executive Conference Chair",
+                         "category":  "furniture",
+                         "price":  499.99,
+                         "discountPercentage":  2.01,
+                         "stock":  26,
+                         "brand":  "Knoll",
+                         "sku":  "FUR-KNO-KNO-014",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  15,
+                         "title":  "Wooden Bathroom Sink With Mirror",
+                         "category":  "furniture",
+                         "price":  799.99,
+                         "discountPercentage":  8.8,
+                         "stock":  7,
+                         "brand":  "Bath Trends",
+                         "sku":  "FUR-BAT-WOO-015",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  16,
+                         "title":  "Apple",
+                         "category":  "groceries",
+                         "price":  1.99,
+                         "discountPercentage":  12.62,
+                         "stock":  8,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-APP-016",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/apple/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/apple/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  17,
+                         "title":  "Beef Steak",
+                         "category":  "groceries",
+                         "price":  12.99,
+                         "discountPercentage":  9.61,
+                         "stock":  86,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-BEE-017",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/beef-steak/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/beef-steak/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  18,
+                         "title":  "Cat Food",
+                         "category":  "groceries",
+                         "price":  8.99,
+                         "discountPercentage":  9.58,
+                         "stock":  46,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-FOO-018",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/cat-food/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/cat-food/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  19,
+                         "title":  "Chicken Meat",
+                         "category":  "groceries",
+                         "price":  9.99,
+                         "discountPercentage":  13.7,
+                         "stock":  97,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-CHI-019",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/chicken-meat/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/chicken-meat/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/groceries/chicken-meat/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  20,
+                         "title":  "Cooking Oil",
+                         "category":  "groceries",
+                         "price":  4.99,
+                         "discountPercentage":  9.33,
+                         "stock":  10,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-COO-020",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/cooking-oil/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/cooking-oil/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  21,
+                         "title":  "Cucumber",
+                         "category":  "groceries",
+                         "price":  1.49,
+                         "discountPercentage":  0.16,
+                         "stock":  84,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-CUC-021",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/cucumber/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/cucumber/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  22,
+                         "title":  "Dog Food",
+                         "category":  "groceries",
+                         "price":  10.99,
+                         "discountPercentage":  10.27,
+                         "stock":  71,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-FOO-022",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/dog-food/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/dog-food/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  23,
+                         "title":  "Eggs",
+                         "category":  "groceries",
+                         "price":  2.99,
+                         "discountPercentage":  11.05,
+                         "stock":  9,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-EGG-023",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/eggs/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/eggs/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  24,
+                         "title":  "Fish Steak",
+                         "category":  "groceries",
+                         "price":  14.99,
+                         "discountPercentage":  4.23,
+                         "stock":  74,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-FIS-024",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/fish-steak/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/fish-steak/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  25,
+                         "title":  "Green Bell Pepper",
+                         "category":  "groceries",
+                         "price":  1.29,
+                         "discountPercentage":  0.16,
+                         "stock":  33,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-GRE-025",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/green-bell-pepper/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/green-bell-pepper/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  26,
+                         "title":  "Green Chili Pepper",
+                         "category":  "groceries",
+                         "price":  0.99,
+                         "discountPercentage":  1,
+                         "stock":  3,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-GRE-026",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/green-chili-pepper/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/green-chili-pepper/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  27,
+                         "title":  "Honey Jar",
+                         "category":  "groceries",
+                         "price":  6.99,
+                         "discountPercentage":  14.4,
+                         "stock":  34,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-HON-027",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/honey-jar/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/honey-jar/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  28,
+                         "title":  "Ice Cream",
+                         "category":  "groceries",
+                         "price":  5.49,
+                         "discountPercentage":  8.69,
+                         "stock":  27,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-CRE-028",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/ice-cream/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/ice-cream/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/groceries/ice-cream/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/groceries/ice-cream/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/groceries/ice-cream/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  29,
+                         "title":  "Juice",
+                         "category":  "groceries",
+                         "price":  3.99,
+                         "discountPercentage":  12.06,
+                         "stock":  50,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-JUI-029",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/juice/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/juice/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  30,
+                         "title":  "Kiwi",
+                         "category":  "groceries",
+                         "price":  2.49,
+                         "discountPercentage":  15.22,
+                         "stock":  99,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-KIW-030",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/kiwi/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/kiwi/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  31,
+                         "title":  "Lemon",
+                         "category":  "groceries",
+                         "price":  0.79,
+                         "discountPercentage":  9.7,
+                         "stock":  31,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-LEM-031",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/lemon/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/lemon/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  32,
+                         "title":  "Milk",
+                         "category":  "groceries",
+                         "price":  3.49,
+                         "discountPercentage":  13.74,
+                         "stock":  27,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-MIL-032",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/milk/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/milk/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  33,
+                         "title":  "Mulberry",
+                         "category":  "groceries",
+                         "price":  4.99,
+                         "discountPercentage":  12.87,
+                         "stock":  99,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-MUL-033",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/mulberry/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/mulberry/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  34,
+                         "title":  "Nescafe Coffee",
+                         "category":  "groceries",
+                         "price":  7.99,
+                         "discountPercentage":  1.59,
+                         "stock":  57,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-NES-034",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/nescafe-coffee/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/nescafe-coffee/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  35,
+                         "title":  "Potatoes",
+                         "category":  "groceries",
+                         "price":  2.29,
+                         "discountPercentage":  5.38,
+                         "stock":  13,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-POT-035",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/potatoes/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/potatoes/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  36,
+                         "title":  "Protein Powder",
+                         "category":  "groceries",
+                         "price":  19.99,
+                         "discountPercentage":  7.59,
+                         "stock":  80,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-PRO-036",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/protein-powder/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/protein-powder/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  37,
+                         "title":  "Red Onions",
+                         "category":  "groceries",
+                         "price":  1.99,
+                         "discountPercentage":  9.9,
+                         "stock":  82,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-ONI-037",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/red-onions/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/red-onions/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  38,
+                         "title":  "Rice",
+                         "category":  "groceries",
+                         "price":  5.99,
+                         "discountPercentage":  9.29,
+                         "stock":  59,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-RIC-038",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/rice/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/rice/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  39,
+                         "title":  "Soft Drinks",
+                         "category":  "groceries",
+                         "price":  1.99,
+                         "discountPercentage":  17.48,
+                         "stock":  53,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-SOF-039",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/soft-drinks/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/soft-drinks/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  40,
+                         "title":  "Strawberry",
+                         "category":  "groceries",
+                         "price":  3.99,
+                         "discountPercentage":  1.12,
+                         "stock":  46,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-STR-040",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/strawberry/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/strawberry/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  41,
+                         "title":  "Tissue Paper Box",
+                         "category":  "groceries",
+                         "price":  2.49,
+                         "discountPercentage":  13.28,
+                         "stock":  86,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-TIS-041",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/tissue-paper-box/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/tissue-paper-box/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/groceries/tissue-paper-box/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  42,
+                         "title":  "Water",
+                         "category":  "groceries",
+                         "price":  0.99,
+                         "discountPercentage":  14.92,
+                         "stock":  53,
+                         "brand":  null,
+                         "sku":  "GRO-BRD-WAT-042",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/groceries/water/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/groceries/water/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  43,
+                         "title":  "Decoration Swing",
+                         "category":  "home-decoration",
+                         "price":  59.99,
+                         "discountPercentage":  10.41,
+                         "stock":  47,
+                         "brand":  null,
+                         "sku":  "HOM-BRD-DEC-043",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  44,
+                         "title":  "Family Tree Photo Frame",
+                         "category":  "home-decoration",
+                         "price":  29.99,
+                         "discountPercentage":  14.87,
+                         "stock":  77,
+                         "brand":  null,
+                         "sku":  "HOM-BRD-FAM-044",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/home-decoration/family-tree-photo-frame/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/family-tree-photo-frame/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  45,
+                         "title":  "House Showpiece Plant",
+                         "category":  "home-decoration",
+                         "price":  39.99,
+                         "discountPercentage":  7.46,
+                         "stock":  28,
+                         "brand":  null,
+                         "sku":  "HOM-BRD-HOU-045",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/home-decoration/house-showpiece-plant/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/house-showpiece-plant/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/house-showpiece-plant/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/house-showpiece-plant/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  46,
+                         "title":  "Plant Pot",
+                         "category":  "home-decoration",
+                         "price":  14.99,
+                         "discountPercentage":  6.84,
+                         "stock":  59,
+                         "brand":  null,
+                         "sku":  "HOM-BRD-PLA-046",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  47,
+                         "title":  "Table Lamp",
+                         "category":  "home-decoration",
+                         "price":  49.99,
+                         "discountPercentage":  7.09,
+                         "stock":  9,
+                         "brand":  null,
+                         "sku":  "HOM-BRD-TAB-047",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  48,
+                         "title":  "Bamboo Spatula",
+                         "category":  "kitchen-accessories",
+                         "price":  7.99,
+                         "discountPercentage":  2.84,
+                         "stock":  37,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-BAM-048",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/bamboo-spatula/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/bamboo-spatula/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  49,
+                         "title":  "Black Aluminium Cup",
+                         "category":  "kitchen-accessories",
+                         "price":  5.99,
+                         "discountPercentage":  15.65,
+                         "stock":  75,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-BLA-049",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/black-aluminium-cup/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/black-aluminium-cup/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/black-aluminium-cup/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  50,
+                         "title":  "Black Whisk",
+                         "category":  "kitchen-accessories",
+                         "price":  9.99,
+                         "discountPercentage":  10.24,
+                         "stock":  73,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-BLA-050",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/black-whisk/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/black-whisk/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  51,
+                         "title":  "Boxed Blender",
+                         "category":  "kitchen-accessories",
+                         "price":  39.99,
+                         "discountPercentage":  7.26,
+                         "stock":  9,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-BOX-051",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/boxed-blender/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/boxed-blender/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/boxed-blender/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/boxed-blender/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/boxed-blender/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  52,
+                         "title":  "Carbon Steel Wok",
+                         "category":  "kitchen-accessories",
+                         "price":  29.99,
+                         "discountPercentage":  6.53,
+                         "stock":  40,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-CAR-052",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/carbon-steel-wok/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/carbon-steel-wok/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  53,
+                         "title":  "Chopping Board",
+                         "category":  "kitchen-accessories",
+                         "price":  12.99,
+                         "discountPercentage":  8.03,
+                         "stock":  14,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-CHO-053",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/chopping-board/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/chopping-board/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  54,
+                         "title":  "Citrus Squeezer Yellow",
+                         "category":  "kitchen-accessories",
+                         "price":  8.99,
+                         "discountPercentage":  12.1,
+                         "stock":  22,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-CIT-054",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/citrus-squeezer-yellow/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/citrus-squeezer-yellow/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  55,
+                         "title":  "Egg Slicer",
+                         "category":  "kitchen-accessories",
+                         "price":  6.99,
+                         "discountPercentage":  14.76,
+                         "stock":  40,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-SLI-055",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/egg-slicer/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/egg-slicer/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  56,
+                         "title":  "Electric Stove",
+                         "category":  "kitchen-accessories",
+                         "price":  49.99,
+                         "discountPercentage":  14.04,
+                         "stock":  21,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-ELE-056",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  57,
+                         "title":  "Fine Mesh Strainer",
+                         "category":  "kitchen-accessories",
+                         "price":  9.99,
+                         "discountPercentage":  3.5,
+                         "stock":  85,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-FIN-057",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/fine-mesh-strainer/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/fine-mesh-strainer/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  58,
+                         "title":  "Fork",
+                         "category":  "kitchen-accessories",
+                         "price":  3.99,
+                         "discountPercentage":  8.07,
+                         "stock":  7,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-FOR-058",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/fork/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/fork/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  59,
+                         "title":  "Glass",
+                         "category":  "kitchen-accessories",
+                         "price":  4.99,
+                         "discountPercentage":  7.92,
+                         "stock":  46,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-GLA-059",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/glass/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/glass/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  60,
+                         "title":  "Grater Black",
+                         "category":  "kitchen-accessories",
+                         "price":  10.99,
+                         "discountPercentage":  3.56,
+                         "stock":  84,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-GRA-060",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/grater-black/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/grater-black/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  61,
+                         "title":  "Hand Blender",
+                         "category":  "kitchen-accessories",
+                         "price":  34.99,
+                         "discountPercentage":  17.02,
+                         "stock":  84,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-HAN-061",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/hand-blender/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/hand-blender/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  62,
+                         "title":  "Ice Cube Tray",
+                         "category":  "kitchen-accessories",
+                         "price":  5.99,
+                         "discountPercentage":  0.63,
+                         "stock":  13,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-CUB-062",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/ice-cube-tray/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/ice-cube-tray/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  63,
+                         "title":  "Kitchen Sieve",
+                         "category":  "kitchen-accessories",
+                         "price":  7.99,
+                         "discountPercentage":  18.91,
+                         "stock":  68,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-KIT-063",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/kitchen-sieve/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/kitchen-sieve/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  64,
+                         "title":  "Knife",
+                         "category":  "kitchen-accessories",
+                         "price":  14.99,
+                         "discountPercentage":  18.86,
+                         "stock":  7,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-KNI-064",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/knife/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/knife/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  65,
+                         "title":  "Lunch Box",
+                         "category":  "kitchen-accessories",
+                         "price":  12.99,
+                         "discountPercentage":  10.34,
+                         "stock":  94,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-LUN-065",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/lunch-box/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/lunch-box/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  66,
+                         "title":  "Microwave Oven",
+                         "category":  "kitchen-accessories",
+                         "price":  89.99,
+                         "discountPercentage":  12.13,
+                         "stock":  59,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-MIC-066",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  67,
+                         "title":  "Mug Tree Stand",
+                         "category":  "kitchen-accessories",
+                         "price":  15.99,
+                         "discountPercentage":  9.25,
+                         "stock":  88,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-TRE-067",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/mug-tree-stand/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/mug-tree-stand/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/mug-tree-stand/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  68,
+                         "title":  "Pan",
+                         "category":  "kitchen-accessories",
+                         "price":  24.99,
+                         "discountPercentage":  3,
+                         "stock":  90,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-PRD-068",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/pan/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/pan/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  69,
+                         "title":  "Plate",
+                         "category":  "kitchen-accessories",
+                         "price":  3.99,
+                         "discountPercentage":  7.31,
+                         "stock":  66,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-PLA-069",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/plate/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/plate/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  70,
+                         "title":  "Red Tongs",
+                         "category":  "kitchen-accessories",
+                         "price":  6.99,
+                         "discountPercentage":  14.52,
+                         "stock":  82,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-TON-070",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/red-tongs/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/red-tongs/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  71,
+                         "title":  "Silver Pot With Glass Cap",
+                         "category":  "kitchen-accessories",
+                         "price":  39.99,
+                         "discountPercentage":  5.7,
+                         "stock":  40,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-SIL-071",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/silver-pot-with-glass-cap/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/silver-pot-with-glass-cap/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  72,
+                         "title":  "Slotted Turner",
+                         "category":  "kitchen-accessories",
+                         "price":  8.99,
+                         "discountPercentage":  13.35,
+                         "stock":  88,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-SLO-072",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/slotted-turner/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/slotted-turner/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  73,
+                         "title":  "Spice Rack",
+                         "category":  "kitchen-accessories",
+                         "price":  19.99,
+                         "discountPercentage":  12.09,
+                         "stock":  79,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-SPI-073",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/spice-rack/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/spice-rack/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  74,
+                         "title":  "Spoon",
+                         "category":  "kitchen-accessories",
+                         "price":  4.99,
+                         "discountPercentage":  1.53,
+                         "stock":  59,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-SPO-074",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/spoon/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/spoon/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  75,
+                         "title":  "Tray",
+                         "category":  "kitchen-accessories",
+                         "price":  16.99,
+                         "discountPercentage":  7.48,
+                         "stock":  71,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-TRA-075",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/tray/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/tray/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  76,
+                         "title":  "Wooden Rolling Pin",
+                         "category":  "kitchen-accessories",
+                         "price":  11.99,
+                         "discountPercentage":  9.75,
+                         "stock":  80,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-WOO-076",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/wooden-rolling-pin/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/wooden-rolling-pin/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  77,
+                         "title":  "Yellow Peeler",
+                         "category":  "kitchen-accessories",
+                         "price":  5.99,
+                         "discountPercentage":  12.48,
+                         "stock":  35,
+                         "brand":  null,
+                         "sku":  "KIT-BRD-YEL-077",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/kitchen-accessories/yellow-peeler/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/kitchen-accessories/yellow-peeler/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  78,
+                         "title":  "Apple MacBook Pro 14 Inch Space Grey",
+                         "category":  "laptops",
+                         "price":  1999.99,
+                         "discountPercentage":  4.69,
+                         "stock":  24,
+                         "brand":  "Apple",
+                         "sku":  "LAP-APP-APP-078",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  79,
+                         "title":  "Asus Zenbook Pro Dual Screen Laptop",
+                         "category":  "laptops",
+                         "price":  1799.99,
+                         "discountPercentage":  11.14,
+                         "stock":  45,
+                         "brand":  "Asus",
+                         "sku":  "LAP-ASU-ASU-079",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  80,
+                         "title":  "Huawei Matebook X Pro",
+                         "category":  "laptops",
+                         "price":  1399.99,
+                         "discountPercentage":  9.38,
+                         "stock":  75,
+                         "brand":  "Huawei",
+                         "sku":  "LAP-HUA-HUA-080",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  81,
+                         "title":  "Lenovo Yoga 920",
+                         "category":  "laptops",
+                         "price":  1099.99,
+                         "discountPercentage":  6.55,
+                         "stock":  40,
+                         "brand":  "Lenovo",
+                         "sku":  "LAP-LEN-LEN-081",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  82,
+                         "title":  "New DELL XPS 13 9300 Laptop",
+                         "category":  "laptops",
+                         "price":  1499.99,
+                         "discountPercentage":  11.89,
+                         "stock":  74,
+                         "brand":  "Dell",
+                         "sku":  "LAP-DEL-DEL-082",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  83,
+                         "title":  "Blue \u0026 Black Check Shirt",
+                         "category":  "mens-shirts",
+                         "price":  29.99,
+                         "discountPercentage":  15.35,
+                         "stock":  38,
+                         "brand":  "Fashion Trends",
+                         "sku":  "MEN-FAS-BLU-083",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shirts/blue-\u0026-black-check-shirt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/blue-\u0026-black-check-shirt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/blue-\u0026-black-check-shirt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/blue-\u0026-black-check-shirt/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/blue-\u0026-black-check-shirt/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  84,
+                         "title":  "Gigabyte Aorus Men Tshirt",
+                         "category":  "mens-shirts",
+                         "price":  24.99,
+                         "discountPercentage":  0.94,
+                         "stock":  90,
+                         "brand":  "Gigabyte",
+                         "sku":  "MEN-GIG-GIG-084",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  85,
+                         "title":  "Man Plaid Shirt",
+                         "category":  "mens-shirts",
+                         "price":  34.99,
+                         "discountPercentage":  19.5,
+                         "stock":  82,
+                         "brand":  "Classic Wear",
+                         "sku":  "MEN-CLA-PLA-085",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  86,
+                         "title":  "Man Short Sleeve Shirt",
+                         "category":  "mens-shirts",
+                         "price":  19.99,
+                         "discountPercentage":  6.83,
+                         "stock":  2,
+                         "brand":  "Casual Comfort",
+                         "sku":  "MEN-CAS-SHO-086",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  87,
+                         "title":  "Men Check Shirt",
+                         "category":  "mens-shirts",
+                         "price":  27.99,
+                         "discountPercentage":  11.38,
+                         "stock":  95,
+                         "brand":  "Urban Chic",
+                         "sku":  "MEN-URB-CHE-087",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  88,
+                         "title":  "Nike Air Jordan 1 Red And Black",
+                         "category":  "mens-shoes",
+                         "price":  149.99,
+                         "discountPercentage":  4.12,
+                         "stock":  7,
+                         "brand":  "Nike",
+                         "sku":  "MEN-NIK-NIK-088",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  89,
+                         "title":  "Nike Baseball Cleats",
+                         "category":  "mens-shoes",
+                         "price":  79.99,
+                         "discountPercentage":  18.04,
+                         "stock":  12,
+                         "brand":  "Nike",
+                         "sku":  "MEN-NIK-NIK-089",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  90,
+                         "title":  "Puma Future Rider Trainers",
+                         "category":  "mens-shoes",
+                         "price":  89.99,
+                         "discountPercentage":  4.2,
+                         "stock":  90,
+                         "brand":  "Puma",
+                         "sku":  "MEN-PUM-PUM-090",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  91,
+                         "title":  "Sports Sneakers Off White \u0026 Red",
+                         "category":  "mens-shoes",
+                         "price":  119.99,
+                         "discountPercentage":  4.97,
+                         "stock":  17,
+                         "brand":  "Off White",
+                         "sku":  "MEN-OFF-SPO-091",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-\u0026-red/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-\u0026-red/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-\u0026-red/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-\u0026-red/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-\u0026-red/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  92,
+                         "title":  "Sports Sneakers Off White Red",
+                         "category":  "mens-shoes",
+                         "price":  109.99,
+                         "discountPercentage":  0.04,
+                         "stock":  62,
+                         "brand":  "Off White",
+                         "sku":  "MEN-OFF-SPO-092",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  93,
+                         "title":  "Brown Leather Belt Watch",
+                         "category":  "mens-watches",
+                         "price":  89.99,
+                         "discountPercentage":  5.99,
+                         "stock":  32,
+                         "brand":  "Fashion Timepieces",
+                         "sku":  "MEN-FAS-BRO-093",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  94,
+                         "title":  "Longines Master Collection",
+                         "category":  "mens-watches",
+                         "price":  1499.99,
+                         "discountPercentage":  17.24,
+                         "stock":  100,
+                         "brand":  "Longines",
+                         "sku":  "MEN-LON-LON-094",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  95,
+                         "title":  "Rolex Cellini Date Black Dial",
+                         "category":  "mens-watches",
+                         "price":  8999.99,
+                         "discountPercentage":  8.88,
+                         "stock":  40,
+                         "brand":  "Rolex",
+                         "sku":  "MEN-ROL-ROL-095",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  96,
+                         "title":  "Rolex Cellini Moonphase",
+                         "category":  "mens-watches",
+                         "price":  12999.99,
+                         "discountPercentage":  17.52,
+                         "stock":  36,
+                         "brand":  "Rolex",
+                         "sku":  "MEN-ROL-ROL-096",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  97,
+                         "title":  "Rolex Datejust",
+                         "category":  "mens-watches",
+                         "price":  10999.99,
+                         "discountPercentage":  3.73,
+                         "stock":  86,
+                         "brand":  "Rolex",
+                         "sku":  "MEN-ROL-ROL-097",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  98,
+                         "title":  "Rolex Submariner Watch",
+                         "category":  "mens-watches",
+                         "price":  13999.99,
+                         "discountPercentage":  5.05,
+                         "stock":  55,
+                         "brand":  "Rolex",
+                         "sku":  "MEN-ROL-ROL-098",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  99,
+                         "title":  "Amazon Echo Plus",
+                         "category":  "mobile-accessories",
+                         "price":  99.99,
+                         "discountPercentage":  12.07,
+                         "stock":  61,
+                         "brand":  "Amazon",
+                         "sku":  "MOB-AMA-AMA-099",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  100,
+                         "title":  "Apple Airpods",
+                         "category":  "mobile-accessories",
+                         "price":  129.99,
+                         "discountPercentage":  15.54,
+                         "stock":  67,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-APP-100",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  101,
+                         "title":  "Apple AirPods Max Silver",
+                         "category":  "mobile-accessories",
+                         "price":  549.99,
+                         "discountPercentage":  13.67,
+                         "stock":  59,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-APP-101",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  102,
+                         "title":  "Apple Airpower Wireless Charger",
+                         "category":  "mobile-accessories",
+                         "price":  79.99,
+                         "discountPercentage":  4.48,
+                         "stock":  1,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-APP-102",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  103,
+                         "title":  "Apple HomePod Mini Cosmic Grey",
+                         "category":  "mobile-accessories",
+                         "price":  99.99,
+                         "discountPercentage":  18.1,
+                         "stock":  27,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-APP-103",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  104,
+                         "title":  "Apple iPhone Charger",
+                         "category":  "mobile-accessories",
+                         "price":  19.99,
+                         "discountPercentage":  18.52,
+                         "stock":  31,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-APP-104",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  105,
+                         "title":  "Apple MagSafe Battery Pack",
+                         "category":  "mobile-accessories",
+                         "price":  99.99,
+                         "discountPercentage":  17.17,
+                         "stock":  1,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-APP-105",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  106,
+                         "title":  "Apple Watch Series 4 Gold",
+                         "category":  "mobile-accessories",
+                         "price":  349.99,
+                         "discountPercentage":  12.02,
+                         "stock":  33,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-APP-106",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  107,
+                         "title":  "Beats Flex Wireless Earphones",
+                         "category":  "mobile-accessories",
+                         "price":  49.99,
+                         "discountPercentage":  5.73,
+                         "stock":  50,
+                         "brand":  "Beats",
+                         "sku":  "MOB-BEA-BEA-107",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  108,
+                         "title":  "iPhone 12 Silicone Case with MagSafe Plum",
+                         "category":  "mobile-accessories",
+                         "price":  29.99,
+                         "discountPercentage":  13.85,
+                         "stock":  69,
+                         "brand":  "Apple",
+                         "sku":  "MOB-APP-IPH-108",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  109,
+                         "title":  "Monopod",
+                         "category":  "mobile-accessories",
+                         "price":  19.99,
+                         "discountPercentage":  8.58,
+                         "stock":  48,
+                         "brand":  "TechGear",
+                         "sku":  "MOB-TEC-MON-109",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/2.webp"
+                                    ]
+                     },
+                     {
+                         "id":  110,
+                         "title":  "Selfie Lamp with iPhone",
+                         "category":  "mobile-accessories",
+                         "price":  14.99,
+                         "discountPercentage":  19.4,
+                         "stock":  58,
+                         "brand":  "GadgetMaster",
+                         "sku":  "MOB-GAD-SEL-110",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  111,
+                         "title":  "Selfie Stick Monopod",
+                         "category":  "mobile-accessories",
+                         "price":  12.99,
+                         "discountPercentage":  19.12,
+                         "stock":  11,
+                         "brand":  "SnapTech",
+                         "sku":  "MOB-SNA-SEL-111",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  112,
+                         "title":  "TV Studio Camera Pedestal",
+                         "category":  "mobile-accessories",
+                         "price":  499.99,
+                         "discountPercentage":  8.31,
+                         "stock":  15,
+                         "brand":  "ProVision",
+                         "sku":  "MOB-PRO-STU-112",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  113,
+                         "title":  "Generic Motorcycle",
+                         "category":  "motorcycle",
+                         "price":  3999.99,
+                         "discountPercentage":  12.1,
+                         "stock":  34,
+                         "brand":  "Generic Motors",
+                         "sku":  "MOT-GEN-GEN-113",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  114,
+                         "title":  "Kawasaki Z800",
+                         "category":  "motorcycle",
+                         "price":  8999.99,
+                         "discountPercentage":  9.77,
+                         "stock":  52,
+                         "brand":  "Kawasaki",
+                         "sku":  "MOT-KAW-KAW-114",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  115,
+                         "title":  "MotoGP CI.H1",
+                         "category":  "motorcycle",
+                         "price":  14999.99,
+                         "discountPercentage":  6.92,
+                         "stock":  10,
+                         "brand":  "MotoGP",
+                         "sku":  "MOT-MOT-MOT-115",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  116,
+                         "title":  "Scooter Motorcycle",
+                         "category":  "motorcycle",
+                         "price":  2999.99,
+                         "discountPercentage":  6.27,
+                         "stock":  84,
+                         "brand":  "ScootMaster",
+                         "sku":  "MOT-SCO-SCO-116",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  117,
+                         "title":  "Sportbike Motorcycle",
+                         "category":  "motorcycle",
+                         "price":  7499.99,
+                         "discountPercentage":  11.58,
+                         "stock":  0,
+                         "brand":  "SpeedMaster",
+                         "sku":  "MOT-SPE-SPO-117",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  118,
+                         "title":  "Attitude Super Leaves Hand Soap",
+                         "category":  "skin-care",
+                         "price":  8.99,
+                         "discountPercentage":  18.49,
+                         "stock":  94,
+                         "brand":  "Attitude",
+                         "sku":  "SKI-ATT-ATT-118",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  119,
+                         "title":  "Olay Ultra Moisture Shea Butter Body Wash",
+                         "category":  "skin-care",
+                         "price":  12.99,
+                         "discountPercentage":  16.39,
+                         "stock":  34,
+                         "brand":  "Olay",
+                         "sku":  "SKI-OLA-OLA-119",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  120,
+                         "title":  "Vaseline Men Body and Face Lotion",
+                         "category":  "skin-care",
+                         "price":  9.99,
+                         "discountPercentage":  13.39,
+                         "stock":  95,
+                         "brand":  "Vaseline",
+                         "sku":  "SKI-VAS-VAS-120",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  121,
+                         "title":  "iPhone 5s",
+                         "category":  "smartphones",
+                         "price":  199.99,
+                         "discountPercentage":  12.91,
+                         "stock":  25,
+                         "brand":  "Apple",
+                         "sku":  "SMA-APP-IPH-121",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  122,
+                         "title":  "iPhone 6",
+                         "category":  "smartphones",
+                         "price":  299.99,
+                         "discountPercentage":  6.69,
+                         "stock":  60,
+                         "brand":  "Apple",
+                         "sku":  "SMA-APP-IPH-122",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  123,
+                         "title":  "iPhone 13 Pro",
+                         "category":  "smartphones",
+                         "price":  1099.99,
+                         "discountPercentage":  9.37,
+                         "stock":  56,
+                         "brand":  "Apple",
+                         "sku":  "SMA-APP-IPH-123",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  124,
+                         "title":  "iPhone X",
+                         "category":  "smartphones",
+                         "price":  899.99,
+                         "discountPercentage":  19.59,
+                         "stock":  37,
+                         "brand":  "Apple",
+                         "sku":  "SMA-APP-IPH-124",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  125,
+                         "title":  "Oppo A57",
+                         "category":  "smartphones",
+                         "price":  249.99,
+                         "discountPercentage":  2.43,
+                         "stock":  19,
+                         "brand":  "Oppo",
+                         "sku":  "SMA-OPP-OPP-125",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  126,
+                         "title":  "Oppo F19 Pro Plus",
+                         "category":  "smartphones",
+                         "price":  399.99,
+                         "discountPercentage":  18.64,
+                         "stock":  78,
+                         "brand":  "Oppo",
+                         "sku":  "SMA-OPP-OPP-126",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  127,
+                         "title":  "Oppo K1",
+                         "category":  "smartphones",
+                         "price":  299.99,
+                         "discountPercentage":  18.29,
+                         "stock":  55,
+                         "brand":  "Oppo",
+                         "sku":  "SMA-OPP-OPP-127",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  128,
+                         "title":  "Realme C35",
+                         "category":  "smartphones",
+                         "price":  149.99,
+                         "discountPercentage":  15.3,
+                         "stock":  48,
+                         "brand":  "Realme",
+                         "sku":  "SMA-REA-REA-128",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  129,
+                         "title":  "Realme X",
+                         "category":  "smartphones",
+                         "price":  299.99,
+                         "discountPercentage":  6.95,
+                         "stock":  12,
+                         "brand":  "Realme",
+                         "sku":  "SMA-REA-REA-129",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/realme-x/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-x/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-x/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-x/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  130,
+                         "title":  "Realme XT",
+                         "category":  "smartphones",
+                         "price":  349.99,
+                         "discountPercentage":  11.51,
+                         "stock":  80,
+                         "brand":  "Realme",
+                         "sku":  "SMA-REA-REA-130",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  131,
+                         "title":  "Samsung Galaxy S7",
+                         "category":  "smartphones",
+                         "price":  299.99,
+                         "discountPercentage":  19.55,
+                         "stock":  67,
+                         "brand":  "Samsung",
+                         "sku":  "SMA-SAM-SAM-131",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  132,
+                         "title":  "Samsung Galaxy S8",
+                         "category":  "smartphones",
+                         "price":  499.99,
+                         "discountPercentage":  19.45,
+                         "stock":  0,
+                         "brand":  "Samsung",
+                         "sku":  "SMA-SAM-SAM-132",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  133,
+                         "title":  "Samsung Galaxy S10",
+                         "category":  "smartphones",
+                         "price":  699.99,
+                         "discountPercentage":  5.59,
+                         "stock":  19,
+                         "brand":  "Samsung",
+                         "sku":  "SMA-SAM-SAM-133",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  134,
+                         "title":  "Vivo S1",
+                         "category":  "smartphones",
+                         "price":  249.99,
+                         "discountPercentage":  10.17,
+                         "stock":  50,
+                         "brand":  "Vivo",
+                         "sku":  "SMA-VIV-VIV-134",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  135,
+                         "title":  "Vivo V9",
+                         "category":  "smartphones",
+                         "price":  299.99,
+                         "discountPercentage":  17.67,
+                         "stock":  82,
+                         "brand":  "Vivo",
+                         "sku":  "SMA-VIV-VIV-135",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  136,
+                         "title":  "Vivo X21",
+                         "category":  "smartphones",
+                         "price":  499.99,
+                         "discountPercentage":  17.41,
+                         "stock":  7,
+                         "brand":  "Vivo",
+                         "sku":  "SMA-VIV-VIV-136",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  137,
+                         "title":  "American Football",
+                         "category":  "sports-accessories",
+                         "price":  19.99,
+                         "discountPercentage":  4.93,
+                         "stock":  53,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-AME-137",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/american-football/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/american-football/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  138,
+                         "title":  "Baseball Ball",
+                         "category":  "sports-accessories",
+                         "price":  8.99,
+                         "discountPercentage":  1.71,
+                         "stock":  100,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-BAS-138",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-ball/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-ball/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  139,
+                         "title":  "Baseball Glove",
+                         "category":  "sports-accessories",
+                         "price":  24.99,
+                         "discountPercentage":  2.9,
+                         "stock":  22,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-BAS-139",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  140,
+                         "title":  "Basketball",
+                         "category":  "sports-accessories",
+                         "price":  14.99,
+                         "discountPercentage":  7.44,
+                         "stock":  75,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-BAS-140",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  141,
+                         "title":  "Basketball Rim",
+                         "category":  "sports-accessories",
+                         "price":  39.99,
+                         "discountPercentage":  7.74,
+                         "stock":  43,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-BAS-141",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  142,
+                         "title":  "Cricket Ball",
+                         "category":  "sports-accessories",
+                         "price":  12.99,
+                         "discountPercentage":  8.63,
+                         "stock":  30,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-CRI-142",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  143,
+                         "title":  "Cricket Bat",
+                         "category":  "sports-accessories",
+                         "price":  29.99,
+                         "discountPercentage":  3.29,
+                         "stock":  98,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-CRI-143",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  144,
+                         "title":  "Cricket Helmet",
+                         "category":  "sports-accessories",
+                         "price":  44.99,
+                         "discountPercentage":  9.64,
+                         "stock":  10,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-CRI-144",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  145,
+                         "title":  "Cricket Wicket",
+                         "category":  "sports-accessories",
+                         "price":  29.99,
+                         "discountPercentage":  16.93,
+                         "stock":  25,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-CRI-145",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  146,
+                         "title":  "Feather Shuttlecock",
+                         "category":  "sports-accessories",
+                         "price":  5.99,
+                         "discountPercentage":  2.95,
+                         "stock":  95,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-FEA-146",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  147,
+                         "title":  "Football",
+                         "category":  "sports-accessories",
+                         "price":  17.99,
+                         "discountPercentage":  5.15,
+                         "stock":  96,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-FOO-147",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/football/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/football/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  148,
+                         "title":  "Golf Ball",
+                         "category":  "sports-accessories",
+                         "price":  9.99,
+                         "discountPercentage":  17.37,
+                         "stock":  84,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-GOL-148",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/golf-ball/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/golf-ball/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  149,
+                         "title":  "Iron Golf",
+                         "category":  "sports-accessories",
+                         "price":  49.99,
+                         "discountPercentage":  6.53,
+                         "stock":  90,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-IRO-149",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/iron-golf/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/iron-golf/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  150,
+                         "title":  "Metal Baseball Bat",
+                         "category":  "sports-accessories",
+                         "price":  29.99,
+                         "discountPercentage":  19.51,
+                         "stock":  16,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-MET-150",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/metal-baseball-bat/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/metal-baseball-bat/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  151,
+                         "title":  "Tennis Ball",
+                         "category":  "sports-accessories",
+                         "price":  6.99,
+                         "discountPercentage":  11.76,
+                         "stock":  28,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-TEN-151",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  152,
+                         "title":  "Tennis Racket",
+                         "category":  "sports-accessories",
+                         "price":  49.99,
+                         "discountPercentage":  19.61,
+                         "stock":  6,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-TEN-152",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  153,
+                         "title":  "Volleyball",
+                         "category":  "sports-accessories",
+                         "price":  11.99,
+                         "discountPercentage":  12.25,
+                         "stock":  0,
+                         "brand":  null,
+                         "sku":  "SPO-BRD-VOL-153",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/1.webp"
+                                    ]
+                     },
+                     {
+                         "id":  154,
+                         "title":  "Black Sun Glasses",
+                         "category":  "sunglasses",
+                         "price":  29.99,
+                         "discountPercentage":  4.94,
+                         "stock":  60,
+                         "brand":  "Fashion Shades",
+                         "sku":  "SUN-FAS-BLA-154",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  155,
+                         "title":  "Classic Sun Glasses",
+                         "category":  "sunglasses",
+                         "price":  24.99,
+                         "discountPercentage":  4.94,
+                         "stock":  1,
+                         "brand":  "Fashion Shades",
+                         "sku":  "SUN-FAS-CLA-155",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  156,
+                         "title":  "Green and Black Glasses",
+                         "category":  "sunglasses",
+                         "price":  34.99,
+                         "discountPercentage":  1.01,
+                         "stock":  24,
+                         "brand":  "Fashion Shades",
+                         "sku":  "SUN-FAS-GRE-156",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  157,
+                         "title":  "Party Glasses",
+                         "category":  "sunglasses",
+                         "price":  19.99,
+                         "discountPercentage":  11.22,
+                         "stock":  86,
+                         "brand":  "Fashion Fun",
+                         "sku":  "SUN-FAS-PAR-157",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  158,
+                         "title":  "Sunglasses",
+                         "category":  "sunglasses",
+                         "price":  22.99,
+                         "discountPercentage":  1.51,
+                         "stock":  27,
+                         "brand":  "Fashion Shades",
+                         "sku":  "SUN-FAS-SUN-158",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  159,
+                         "title":  "iPad Mini 2021 Starlight",
+                         "category":  "tablets",
+                         "price":  499.99,
+                         "discountPercentage":  3.64,
+                         "stock":  47,
+                         "brand":  "Apple",
+                         "sku":  "TAB-APP-IPA-159",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  160,
+                         "title":  "Samsung Galaxy Tab S8 Plus Grey",
+                         "category":  "tablets",
+                         "price":  599.99,
+                         "discountPercentage":  13.31,
+                         "stock":  62,
+                         "brand":  "Samsung",
+                         "sku":  "TAB-SAM-SAM-160",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  161,
+                         "title":  "Samsung Galaxy Tab White",
+                         "category":  "tablets",
+                         "price":  349.99,
+                         "discountPercentage":  18.2,
+                         "stock":  92,
+                         "brand":  "Samsung",
+                         "sku":  "TAB-SAM-SAM-161",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  162,
+                         "title":  "Blue Frock",
+                         "category":  "tops",
+                         "price":  29.99,
+                         "discountPercentage":  12.13,
+                         "stock":  52,
+                         "brand":  null,
+                         "sku":  "TOP-BRD-BLU-162",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tops/blue-frock/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tops/blue-frock/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/blue-frock/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/blue-frock/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/blue-frock/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  163,
+                         "title":  "Girl Summer Dress",
+                         "category":  "tops",
+                         "price":  19.99,
+                         "discountPercentage":  19.2,
+                         "stock":  43,
+                         "brand":  null,
+                         "sku":  "TOP-BRD-GIR-163",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  164,
+                         "title":  "Gray Dress",
+                         "category":  "tops",
+                         "price":  34.99,
+                         "discountPercentage":  14.28,
+                         "stock":  55,
+                         "brand":  null,
+                         "sku":  "TOP-BRD-GRA-164",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tops/gray-dress/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tops/gray-dress/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/gray-dress/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/gray-dress/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/gray-dress/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  165,
+                         "title":  "Short Frock",
+                         "category":  "tops",
+                         "price":  24.99,
+                         "discountPercentage":  13.45,
+                         "stock":  22,
+                         "brand":  null,
+                         "sku":  "TOP-BRD-SHO-165",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tops/short-frock/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tops/short-frock/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/short-frock/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/short-frock/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/short-frock/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  166,
+                         "title":  "Tartan Dress",
+                         "category":  "tops",
+                         "price":  39.99,
+                         "discountPercentage":  12.95,
+                         "stock":  73,
+                         "brand":  null,
+                         "sku":  "TOP-BRD-TAR-166",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/tops/tartan-dress/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/tops/tartan-dress/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/tartan-dress/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/tartan-dress/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/tops/tartan-dress/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  167,
+                         "title":  "300 Touring",
+                         "category":  "vehicle",
+                         "price":  28999.99,
+                         "discountPercentage":  3.98,
+                         "stock":  54,
+                         "brand":  "Chrysler",
+                         "sku":  "VEH-CHR-TOU-167",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/vehicle/300-touring/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/vehicle/300-touring/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/300-touring/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/300-touring/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/300-touring/4.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/300-touring/5.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/300-touring/6.webp"
+                                    ]
+                     },
+                     {
+                         "id":  168,
+                         "title":  "Charger SXT RWD",
+                         "category":  "vehicle",
+                         "price":  32999.99,
+                         "discountPercentage":  8.23,
+                         "stock":  57,
+                         "brand":  "Dodge",
+                         "sku":  "VEH-DOD-CHA-168",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/4.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/5.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/6.webp"
+                                    ]
+                     },
+                     {
+                         "id":  169,
+                         "title":  "Dodge Hornet GT Plus",
+                         "category":  "vehicle",
+                         "price":  24999.99,
+                         "discountPercentage":  2.63,
+                         "stock":  82,
+                         "brand":  "Dodge",
+                         "sku":  "VEH-DOD-DOD-169",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/4.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/5.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/6.webp"
+                                    ]
+                     },
+                     {
+                         "id":  170,
+                         "title":  "Durango SXT RWD",
+                         "category":  "vehicle",
+                         "price":  36999.99,
+                         "discountPercentage":  16.44,
+                         "stock":  95,
+                         "brand":  "Dodge",
+                         "sku":  "VEH-DOD-DUR-170",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/4.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/5.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/6.webp"
+                                    ]
+                     },
+                     {
+                         "id":  171,
+                         "title":  "Pacifica Touring",
+                         "category":  "vehicle",
+                         "price":  31999.99,
+                         "discountPercentage":  14.76,
+                         "stock":  53,
+                         "brand":  "Chrysler",
+                         "sku":  "VEH-CHR-PAC-171",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/4.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/5.webp",
+                                        "https://cdn.dummyjson.com/product-images/vehicle/pacifica-touring/6.webp"
+                                    ]
+                     },
+                     {
+                         "id":  172,
+                         "title":  "Blue Women\u0027s Handbag",
+                         "category":  "womens-bags",
+                         "price":  49.99,
+                         "discountPercentage":  17.88,
+                         "stock":  76,
+                         "brand":  "Fashionista",
+                         "sku":  "WOM-FAS-BLU-172",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-bags/blue-women\u0027s-handbag/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/blue-women\u0027s-handbag/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/blue-women\u0027s-handbag/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/blue-women\u0027s-handbag/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  173,
+                         "title":  "Heshe Women\u0027s Leather Bag",
+                         "category":  "womens-bags",
+                         "price":  129.99,
+                         "discountPercentage":  3.87,
+                         "stock":  99,
+                         "brand":  "Heshe",
+                         "sku":  "WOM-HES-HES-173",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women\u0027s-leather-bag/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women\u0027s-leather-bag/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women\u0027s-leather-bag/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women\u0027s-leather-bag/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  174,
+                         "title":  "Prada Women Bag",
+                         "category":  "womens-bags",
+                         "price":  599.99,
+                         "discountPercentage":  14.09,
+                         "stock":  75,
+                         "brand":  "Prada",
+                         "sku":  "WOM-PRA-PRA-174",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  175,
+                         "title":  "White Faux Leather Backpack",
+                         "category":  "womens-bags",
+                         "price":  39.99,
+                         "discountPercentage":  15.2,
+                         "stock":  39,
+                         "brand":  "Urban Chic",
+                         "sku":  "WOM-URB-WHI-175",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  176,
+                         "title":  "Women Handbag Black",
+                         "category":  "womens-bags",
+                         "price":  59.99,
+                         "discountPercentage":  11.63,
+                         "stock":  11,
+                         "brand":  "Elegance Collection",
+                         "sku":  "WOM-ELE-WOM-176",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  177,
+                         "title":  "Black Women\u0027s Gown",
+                         "category":  "womens-dresses",
+                         "price":  129.99,
+                         "discountPercentage":  10.48,
+                         "stock":  25,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-BLA-177",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-dresses/black-women\u0027s-gown/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/black-women\u0027s-gown/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/black-women\u0027s-gown/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/black-women\u0027s-gown/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/black-women\u0027s-gown/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  178,
+                         "title":  "Corset Leather With Skirt",
+                         "category":  "womens-dresses",
+                         "price":  89.99,
+                         "discountPercentage":  16.26,
+                         "stock":  30,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-COR-178",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  179,
+                         "title":  "Corset With Black Skirt",
+                         "category":  "womens-dresses",
+                         "price":  79.99,
+                         "discountPercentage":  15.06,
+                         "stock":  33,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-COR-179",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  180,
+                         "title":  "Dress Pea",
+                         "category":  "womens-dresses",
+                         "price":  49.99,
+                         "discountPercentage":  17.68,
+                         "stock":  6,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-DRE-180",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  181,
+                         "title":  "Marni Red \u0026 Black Suit",
+                         "category":  "womens-dresses",
+                         "price":  179.99,
+                         "discountPercentage":  19.02,
+                         "stock":  62,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-MAR-181",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-\u0026-black-suit/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-\u0026-black-suit/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-\u0026-black-suit/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-\u0026-black-suit/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-\u0026-black-suit/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  182,
+                         "title":  "Green Crystal Earring",
+                         "category":  "womens-jewellery",
+                         "price":  29.99,
+                         "discountPercentage":  15.24,
+                         "stock":  54,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-GRE-182",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  183,
+                         "title":  "Green Oval Earring",
+                         "category":  "womens-jewellery",
+                         "price":  24.99,
+                         "discountPercentage":  15.18,
+                         "stock":  73,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-GRE-183",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  184,
+                         "title":  "Tropical Earring",
+                         "category":  "womens-jewellery",
+                         "price":  19.99,
+                         "discountPercentage":  0.76,
+                         "stock":  1,
+                         "brand":  null,
+                         "sku":  "WOM-BRD-TRO-184",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  185,
+                         "title":  "Black \u0026 Brown Slipper",
+                         "category":  "womens-shoes",
+                         "price":  19.99,
+                         "discountPercentage":  3.33,
+                         "stock":  3,
+                         "brand":  "Comfort Trends",
+                         "sku":  "WOM-COM-BLA-185",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-shoes/black-\u0026-brown-slipper/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/black-\u0026-brown-slipper/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/black-\u0026-brown-slipper/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/black-\u0026-brown-slipper/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/black-\u0026-brown-slipper/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  186,
+                         "title":  "Calvin Klein Heel Shoes",
+                         "category":  "womens-shoes",
+                         "price":  79.99,
+                         "discountPercentage":  3.19,
+                         "stock":  93,
+                         "brand":  "Calvin Klein",
+                         "sku":  "WOM-CAL-CAL-186",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  187,
+                         "title":  "Golden Shoes Woman",
+                         "category":  "womens-shoes",
+                         "price":  49.99,
+                         "discountPercentage":  13.93,
+                         "stock":  88,
+                         "brand":  "Fashion Diva",
+                         "sku":  "WOM-FAS-GOL-187",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  188,
+                         "title":  "Pampi Shoes",
+                         "category":  "womens-shoes",
+                         "price":  29.99,
+                         "discountPercentage":  14.14,
+                         "stock":  49,
+                         "brand":  "Pampi",
+                         "sku":  "WOM-PAM-PAM-188",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  189,
+                         "title":  "Red Shoes",
+                         "category":  "womens-shoes",
+                         "price":  34.99,
+                         "discountPercentage":  17.69,
+                         "stock":  7,
+                         "brand":  "Fashion Express",
+                         "sku":  "WOM-FAS-SHO-189",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/3.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/4.webp"
+                                    ]
+                     },
+                     {
+                         "id":  190,
+                         "title":  "IWC Ingenieur Automatic Steel",
+                         "category":  "womens-watches",
+                         "price":  4999.99,
+                         "discountPercentage":  9.45,
+                         "stock":  90,
+                         "brand":  "IWC",
+                         "sku":  "WOM-IWC-ING-190",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  191,
+                         "title":  "Rolex Cellini Moonphase",
+                         "category":  "womens-watches",
+                         "price":  15999.99,
+                         "discountPercentage":  4.11,
+                         "stock":  52,
+                         "brand":  "Rolex",
+                         "sku":  "WOM-ROL-ROL-191",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  192,
+                         "title":  "Rolex Datejust Women",
+                         "category":  "womens-watches",
+                         "price":  10999.99,
+                         "discountPercentage":  15.94,
+                         "stock":  4,
+                         "brand":  "Rolex",
+                         "sku":  "WOM-ROL-ROL-192",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  193,
+                         "title":  "Watch Gold for Women",
+                         "category":  "womens-watches",
+                         "price":  799.99,
+                         "discountPercentage":  18.34,
+                         "stock":  0,
+                         "brand":  "Fashion Gold",
+                         "sku":  "WOM-FAS-WAT-193",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/3.webp"
+                                    ]
+                     },
+                     {
+                         "id":  194,
+                         "title":  "Women\u0027s Wrist Watch",
+                         "category":  "womens-watches",
+                         "price":  129.99,
+                         "discountPercentage":  12.6,
+                         "stock":  12,
+                         "brand":  "Fashion Co.",
+                         "sku":  "WOM-FAS-WOM-194",
+                         "thumbnail":  "https://cdn.dummyjson.com/product-images/womens-watches/women\u0027s-wrist-watch/thumbnail.webp",
+                         "images":  [
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/women\u0027s-wrist-watch/1.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/women\u0027s-wrist-watch/2.webp",
+                                        "https://cdn.dummyjson.com/product-images/womens-watches/women\u0027s-wrist-watch/3.webp"
+                                    ]
+                     }
+                 ]
+}
